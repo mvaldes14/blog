@@ -1,0 +1,30 @@
+---
+import { MarkdocRenderer } from "astro-markdoc-renderer";
+import type { Content } from "astro-markdoc-renderer";
+import CodeBlock from "./CodeBlock.astro";
+import Heading from "./Heading.astro";
+import Images from "./Images.astro"
+
+type Props = {
+  content: Content;
+};
+
+const { content } = Astro.props;
+
+const components = {
+  Heading: {
+    Component: Heading,
+    props: {},
+  },
+  CodeBlock: {
+    Component: CodeBlock,
+    props: {},
+  },
+  Image: {
+    Component: Images,
+    props: {},
+  },
+};
+---
+
+<MarkdocRenderer content={content} components={components} />

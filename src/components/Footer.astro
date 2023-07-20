@@ -1,0 +1,81 @@
+---
+---
+
+<footer class="text-xs leading-[1.75] mt-4">
+  <div
+    class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold "
+  >
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://github.com/mvaldes14"
+    >
+      <i
+        class="fa-brands fa-github"
+        aria-hidden="true"
+        title="GitHub"></i>
+      <span class="fa-sr-only">GitHub</span>
+    </a>
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://twitter.com/mr_mvaldes"
+    >
+      <i
+        class="fa-brands fa-twitter"
+        aria-hidden="true"
+        title="Twitter"></i>
+      <span class="fa-sr-only">Twitter</span>
+    </a>
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://www.linkedin.com/in/miguel-valdes-0476155b/"
+    >
+      <i
+        class="fa-brands fa-linkedin"
+        aria-hidden="true"
+        title="Linkedin"></i>
+      <span class="fa-sr-only">Linkedin</span>
+    </a>
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://git.mvaldes.dev"
+    >
+      <i
+        class="fa-brands fa-git"
+        aria-hidden="true"
+        title="Gitea"></i>
+      <span class="fa-sr-only">Gitea</span>
+    </a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    grid-area: footer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gradient-link {
+    position: relative;
+    box-decoration-break: clone;
+    text-decoration: none;
+  }
+
+  .gradient-link:hover:after {
+    transform: translateZ(0) scale(1);
+  }
+
+  .gradient-link:after {
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    position: absolute;
+    transform: translateZ(0) scaleX(0);
+    transform-origin: left center;
+    transition: all 0.15s ease-in-out;
+  }
+</style>

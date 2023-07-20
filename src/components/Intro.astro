@@ -1,0 +1,99 @@
+---
+import { readAll } from "../lib/markdoc/read";
+import { post } from "../lib/markdoc/frontmatter.schema";
+
+const posts = await readAll({
+  directory: "blog",
+  frontmatterSchema: post,
+});
+
+const latestPosts = posts
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  )
+  .slice(0, 3)
+---
+
+<section class="mb-8">
+  <div class="mb-4">
+    <h1
+      class="font-extrabold text-4xl md:text-4xl tracking-tight pt-4 pb-2 overflow-hidden"
+    >
+      <span
+        class="bg-gradient-to-br from-[#fb923c] via-[#f97316] to-[#ea580c] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
+      >
+       Miguel Valdes 
+      </span>
+    </h1>
+    <div class="text-justify">
+    <p class="text-xl pb-4">Site Reliability Engineer, Gamer & Neovim Fanboy. </p>
+    <p>
+        Welcome to my Blog, in here I will attempt to write about things I’m
+        either working on or things I’m trying to learn to improve my skills,
+        most of the times it’s just me trying out things that I find interesting
+        or cool to demo. 
+    </p>
+    &nbsp;
+    <p>
+      A little bit about me… my name is Miguel, was born in
+        Mexico and I’m an Electronic Engineer that found a burning passion for software.
+        Been in love with computers ever since my parents got a PC back when
+        Jill of the Jungle was released, so yeahh I was put on a path very early
+        in my life. Can’t complain, really love what I do for a living and the
+        world of IT overall. I’m an video game fan, most of the games I enjoy
+        are FPS, Hack & Slash and of course MOBAs. My favorite games are Diablo
+        II and DoTA. 
+    </p>
+    &nbsp;
+        <p>
+          Currently Working for BestBuy as an Infrastructure Engineer. My Goal is to become a full SRE!.
+      </p>
+      </div>
+  <div>
+    <h1
+      class="font-extrabold text-4xl md:text-4xl tracking-tight pt-4 pb-2 overflow-hidden"
+    >
+      <span
+        class="bg-gradient-to-br from-[#fb923c] via-[#f97316] to-[#ea580c] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
+      >
+        Latest Posts
+          </span>
+    </h1>
+    <ul>
+      {
+        latestPosts.map((post) => {
+          const formattedDate = new Date(
+            post.frontmatter.date
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+          return (
+            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="unset hover:text-text-link"
+                  >
+                    {post.frontmatter.title}
+                  </a>
+                  <p class="text-xs italic">
+                    {post.frontmatter.description}
+                  </p>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime={post.frontmatter.date.toISOString()}>
+                  {formattedDate}
+                </time>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+    </div>
+  </div>
+</section>
