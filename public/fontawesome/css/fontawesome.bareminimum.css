@@ -205,3 +205,7 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+.fa-file-pdf::before {
+  content: "\f1c1";
+}

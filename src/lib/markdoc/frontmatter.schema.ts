@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 const baseSchema = z.object({
+  draft: z.boolean().default(false),
   description: z.string(),
   title: z.string({
     required_error: "Required frontmatter missing: title",

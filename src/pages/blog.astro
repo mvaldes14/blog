@@ -11,6 +11,7 @@ const posts = await readAll({
 });
 
 const sortedPosts = posts 
+  .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -

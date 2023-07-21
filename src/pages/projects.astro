@@ -11,6 +11,7 @@ const posts = await readAll({
 });
 
 const sortedPosts = posts
+  .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
@@ -28,7 +29,7 @@ const sortedPosts = posts
       <span
         class="bg-gradient-to-br from-[#fb923c] via-[#f97316] to-[#ea580c] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
       >
-     Completed Projects 
+    Personal Projects 
       </span>
     </h1>
     <ul>
