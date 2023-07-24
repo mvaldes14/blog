@@ -4,7 +4,7 @@
 export const SITE_TITLE = "MValdes";
 export const SITE_DESCRIPTION =
   "Thoughts and not prayers";
-export const TWITTER_HANDLE = "@mrmvaldes";
+export const TWITTER_HANDLE = "@mr_mvaldes";
 export const MY_NAME = "Miguel Valdes";
 
 // setup in astro.config.mjs
