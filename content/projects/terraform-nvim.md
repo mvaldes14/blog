@@ -1,8 +1,8 @@
 ---
 title: Navigating Terraform manifests in Neovim
-date: 2023-07-24
+date: 2023-07-28
 description: My first neovim plugin that actually works.
-draft:  true
+draft:  false
 ---
 
 Part of my work requires me to work with terraform...a lot of terraform since everything has to be done via IaC, or it simply doesn't go through AWS, so since my editor of choice is Neovim and anyone can basically create any extension to do whatever...I figured why not have a dedicated terraform plugin to do some planing and exploring?!. 
@@ -43,6 +43,8 @@ If not I know for sure it will help me at work.
 
 Not to mention that this is my very first plugin, and it was a blast to make, learned a lot on how Neovim internal kind of work and how to leverage buffers and other plugins to build upon. 
 
-10/10 would recommend anyone using Neovim to build a plugin just to learn
+10/10 would recommend anyone using Neovim to build a plugin just to learn.
+
+**Fun fact, doing this plugin made me feel comfortable to tackle a linter for `nvim-lint` as a replacement for null-ls and got my [PR](https://github.com/mfussenegger/nvim-lint/pull/330) approved and merged, quite happy about it.**
 
 If you find this useful don't forget to give it a star over at [GitHub](https://github.com/mvaldes14/terraform.nvim)
