@@ -2,7 +2,6 @@
 title: Introducing asdf-tea
 date: 2023-07-24
 description: An asdf plugin to install gitea tea cli utility
-draft: false
 ---
 
 I've been using asdf a lot lately to manage all of my languages versions and random packages that simply do not have an easy way to install
