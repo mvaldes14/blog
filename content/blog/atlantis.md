@@ -39,7 +39,7 @@ atlantis:
     - ATLANTIS_EMOJI_REACTION=thumbsup
     - ATLANTIS_API_SECRET=<random-secret-for-atlantis-to-validate>
     - ATLANTIS_TFE_TOKEN=<your-hcp-cloud-token>
-    - ATLANTIS_TFE_LOCAL_EXECUTION_MODE=true
+    - ATLANTIS_TFE_LOCAL_EXECUTION_MODE=true # Enable or disable as needed
 
 ```
 
