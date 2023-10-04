@@ -4,6 +4,7 @@ import type { Content } from "astro-markdoc-renderer";
 import CodeBlock from "./CodeBlock.astro";
 import Heading from "./Heading.astro";
 import Images from "./Images.astro"
+import Memes from "./Memes.astro"
 
 type Props = {
   content: Content;
@@ -22,6 +23,10 @@ const components = {
   },
   Image: {
     Component: Images,
+    props: {},
+  },
+  Meme: {
+    Component: Memes,
     props: {},
   },
 };

@@ -76,6 +76,14 @@ export const config: Config = {
       },
       selfClosing: true,
     },
+    meme: {
+      render: "Meme",
+      attributes: {
+        src: { type: String, required: true },
+        alt: { type: String, required: false},
+      },
+      selfClosing: true,
+    },
   },
   nodes: {
     heading: {
