@@ -88,7 +88,7 @@ def main(db, client, chat_id, log)
 end
 ```
 
-The secrets and tokens are kept as environment variables and loaded when the script is executed. The rest of the code can be found in the repo [here](https://git.mvaldes.dev/mvaldes/server_scraper).
+The secrets and tokens are kept as environment variables and loaded when the script is executed. The rest of the code can be found in the repo [here](https://github.com/mvaldes14/server_scraper).
 
 ## Final Thoughts
 

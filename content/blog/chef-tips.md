@@ -49,12 +49,12 @@ cinc-shell -s
 
 cinc (17.9.26)> recipe_mode
 cinc:recipe > git '/tmp/dotfiles' do
-cinc:recipe >   repository 'https://git.mvaldes.dev/mvaldes/dotfiles.git'
+cinc:recipe >   repository 'https://github.com/mvaldes14/dotfiles.git'
 cinc:recipe (17.9.26)> end
- => <git[/tmp/dotfiles] @name: "/tmp/dotfiles" @before: nil @params: {} @provider: nil @allowed_actions: [:nothing, :sync, :checkout, :export, :diff, :log] @action: [:sync] @updated: false @updated_by_last_action: false @source_line: "(irb#1):1:in `<main>'" @guard_interpreter: nil @default_guard_interpreter: :default @elapsed_time: 0 @declared_type: :git @cookbook_name: nil @recipe_name: nil @repository: "https://git.mvaldes.dev/mvaldes/dotfiles.git">
+ => <git[/tmp/dotfiles] @name: "/tmp/dotfiles" @before: nil @params: {} @provider: nil @allowed_actions: [:nothing, :sync, :checkout, :export, :diff, :log] @action: [:sync] @updated: false @updated_by_last_action: false @source_line: "(irb#1):1:in `<main>'" @guard_interpreter: nil @default_guard_interpreter: :default @elapsed_time: 0 @declared_type: :git @cookbook_name: nil @recipe_name: nil @repository: "https://github.com/mvaldes14/dotfiles.git">
 cinc:recipe (17.9.26)> run_chef
 [2022-10-12T20:56:21-05:00] INFO: Processing git[/tmp/dotfiles] action sync ((irb#1) line 1)
-[2022-10-12T20:56:22-05:00] INFO: git[/tmp/dotfiles] cloning repo https://git.mvaldes.dev/mvaldes/dotfiles.git to /tmp/dotfiles
+[2022-10-12T20:56:22-05:00] INFO: git[/tmp/dotfiles] cloning repo https://github.com/mvaldes14/dotfiles.git to /tmp/dotfiles
 [2022-10-12T20:56:23-05:00] INFO: git[/tmp/dotfiles] checked out reference: 5c362e70aaa0c51055df0c7015582d89ab3e1017
  => true
 

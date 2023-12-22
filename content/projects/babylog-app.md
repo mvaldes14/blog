@@ -66,7 +66,7 @@ Overall, the application did what we needed it to do. Got us through the first f
 
 From a tech side, I have never worked with Firebase or similar products before which are pretty cool and easy to use, I know there are OSS alternatives to Firebase like Supabase or Appwrite so I'm pretty interested in trying those out, specially since you can selfhost them!!.
 
-The entire code for the application can be found in my [git repo](https://git.mvaldes.dev/mvaldes/babylog), feel free to browse it and reuse it.
+The entire code for the application can be found in my [git repo](https://github.com/mvaldes14/babylog), feel free to browse it and reuse it.
 
 I know that the firebase configuration should be kept as a secret but by the time you read this, the application will no longer have the backend enabled so nothing harmful is exposed 😗
 
