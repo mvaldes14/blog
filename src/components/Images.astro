@@ -4,7 +4,7 @@ type Props = {
   alt: string;
 };
 const { src, alt } = Astro.props;
-const baseURL = "https://pub-5937e710ea9840539571d58d00f863c1.r2.dev";
+const baseURL = "https://s3.mvaldes.dev/blog";
 const url = `${baseURL}/${src}`;
 ---
 <img class="mx-auto" src={url} alt={alt} />
