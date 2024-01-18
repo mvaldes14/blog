@@ -1336,6 +1336,7 @@
 
 .fa-twitch:before {
   content: "\f1e8";
+  font-weight: 900
 }
 
 .fa-ravelry:before {
