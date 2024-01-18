@@ -18,7 +18,8 @@ One thing to point out, I'm not expecting to get famous or rich on this, I'm hon
 I will admit tho I still get nervous when someone randomly pops up and asks a thing, I have to remind myself to try to interact with people cause at the end of the day I need to build up the confidence.
 
 So yeah if you are interested in seeing me and my late study sessions tune in and ask stuff or just troll me.
-https://links.mvaldes.dev/stream
+
+[Twitch](https://links.mvaldes.dev/stream)
 
 See ya!
 
