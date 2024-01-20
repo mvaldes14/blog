@@ -2,6 +2,7 @@
 title: Splunk Quickstart Guide
 date: 2020-12-16
 description: Not everything is Elasticsearch in this life.
+status: "Complete"
 ---
 
 An opportunity came up at work for me to expand my tool set into another logging solution that is quite popular, Splunk.

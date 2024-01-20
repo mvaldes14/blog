@@ -1,7 +1,8 @@
 ---
 title: Started Streaming
 date: 2024-01-18
-description: I have started streaming
+description: Look Ma' I'm a streamer now
+status: "Complete"
 ---
 
 It's been years since I discovered Twitch and regularly use it to watch tournaments of my favorite games, or to watch other people try out new games, so I could validate if it was worth my time and money, cause watching reviews is cool and all but seeing someone else play it just hits differently.

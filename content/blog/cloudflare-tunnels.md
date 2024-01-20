@@ -2,6 +2,7 @@
 title: Cloudflare Tunnels are the bomb
 date: 2023-02-25
 description: Want to expose things to the internet safely? Use Tunnels!
+status: "Complete"
 ---
 
 As a self-hosted user, I understand the importance of keeping my applications and sites secure while still being able to access them from anywhere, because not everything can depend on me being on my home LAN.

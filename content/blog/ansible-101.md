@@ -2,6 +2,7 @@
 title: Ansible 101
 date: 2019-01-18
 description: Ansible is my favorite configuration management tool, learn why.
+status: "Complete"
 ---
 
 ## Overview

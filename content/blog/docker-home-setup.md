@@ -2,6 +2,7 @@
 title: My Home Docker Setup[2020]
 date: 2020-03-04
 description: A rundown of what i have in my homelab in 2020
+status: "Complete"
 ---
 
 Recently decided to migrate all of the things that I run on my personal computer and a little server I got for Xmas (originally for PLEX) as well as my raspberry pi to docker containers so that I could experiment more with it and boy, not as easy as I thought it was going to be.

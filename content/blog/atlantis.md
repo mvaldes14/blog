@@ -2,6 +2,7 @@
 title: Terraform Automation with Atlantis
 date: 2023-10-04
 description: Want to look cool and deploy your infra like an enterprise would? Get some Atlantis into your homelab.
+status: "Complete"
 ---
 
 In big enterprises with decent IaC experience and infrastructure footprint you as a good engineer will use some sort of workflow to allow teams to deploy their infrastructure as code, so that things are controlled, centralized and manageable for whoever is paying the cloud bill.

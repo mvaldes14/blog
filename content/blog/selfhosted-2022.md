@@ -2,6 +2,7 @@
 title: My SelfHosted Journey in [2022]
 date: 2022-03-24
 description: What I'm currently running in the homelab 2022 edition
+status: "Complete"
 ---
 
 Back in 2020 I started the beautiful journey of running services in my gaming rig, a Dell SFF computer and a Raspberry Pi 3b and due to the pandemic I had plenty of time at home to start playing with tech that I described back in this [post](https://blog.mvaldes.dev/docker-home-setup.html) but much has changed since then, so I figured I would share where that journey has taken me.

@@ -2,6 +2,7 @@
 title: Pihole is pure awesomeness
 date: 2020-08-26
 description: Why are you not running PiHole in your own network?
+status: "Complete"
 ---
 
 Its been months ever since I setup my pihole and I never noticed how much it helps reduce the number of ads and spam I used to see in the webpages until one day the SD card on my raspberry pi was at 100% so everything running in there stopped responding and I never noticed it.... dont be like me and monitor your devices, anyways I started seeing a bunch of pop ups, modals and ads everywhere... That's when I realized once again how much everyone needs a pihole in their Network and also how infected the internet is... of just so much random stuff that tracks you and serves trash.

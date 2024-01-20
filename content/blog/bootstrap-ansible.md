@@ -2,6 +2,7 @@
 title: Bootstrap your system with ansible
 date: 2019-08-20
 description: Tired of setting up your system whenever you change distros? So am I.
+status: "Complete"
 ---
 
 I've been distro hoping for a month or so now trying to find the perfect balance between productivity and ease of use as well as aesthetics, so I could feel comfortable using my computer for more than just messing around (Ended up staying with Manjaro KDE in case you were curious).

@@ -2,6 +2,7 @@
 title: Neovim in 2023
 date: 2023-09-19
 description: Using Neovim entirely for over a year now
+status: "Complete"
 ---
 
 I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of Vscode. 

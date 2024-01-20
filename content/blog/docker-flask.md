@@ -2,6 +2,7 @@
 title: Python Flask in a container
 date: 2018-12-07
 description: Devcontainers in a nutshell
+status: "Complete"
 ---
 
 **_Make your apps easier to deploy and carry with you_**

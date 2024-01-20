@@ -2,6 +2,7 @@
 title: Use Pipenv, seriously
 description: Python environments are a mess, use pipenv
 date: 2019-01-15
+status: "Complete"
 ---
 
 So not too long ago i wrote a post about how a lot of people manager their virtualenvs and for a long time this approach has been working fine, until i recently saw on twitter something called ‘pipenv’ so i was curious about it… so here we are today.
