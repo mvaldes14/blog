@@ -5,7 +5,7 @@ description: Using Neovim entirely for over a year now
 status: "Complete"
 ---
 
-I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of Vscode. 
+I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of VScode. 
 Now I'm one with Lua/Neovim and everyone else using the bloated editor is wrong (hot take 🔥).
 
 ### Here's why
@@ -49,5 +49,3 @@ Maybe you will end up writing your own plugin for something that you wanted to d
 Take a leap and give it a go, have some patience and join the cult.
 
 If you want to check out how to make your config look like mine, check out my dotfiles [here](https://git.mvaldes.dev/dotfiles)
-
-
