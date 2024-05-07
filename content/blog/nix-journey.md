@@ -22,7 +22,9 @@ So with that in mind, I'm currently using 2 out of 3 of those components.
 
 1. The Package Manager
 2. The Nix Language
-3. The package manager helps me basically install anything that I would ever need on my system, it also lets me declare what my computer will need in a file so if for some reason this one blows up I can always just recover in seconds by using the configuration file, think of it like GitOps but for your personal system (this can also be applied or used on production machines that need to have certain pieces of software installed/enabled).
+3. The operating system
+
+The package manager helps me basically install anything that I would ever need on my system, it also lets me declare what my computer will need in a file so if for some reason this one blows up I can always just recover in seconds by using the configuration file, think of it like GitOps but for your personal system (this can also be applied or used on production machines that need to have certain pieces of software installed/enabled).
 
 Then the Nix Language which is the part that I was scared of the most is a way to declare functionality and let you configure your system in various ways. The 3rd part which is NixOS is where it all sort of comes together as you can basically create a new "generation" of your machine by modifying and applying the latest version of your configuration file. The language itself isn't exactly super complex, but it's syntax for someone that me that isn't used to something simpler than python/Golang looks a bit odd. But at the end of the day it has its little gotchas and once you go over that portion it's a bumpy ride but a pleasant one (remember we like suffering).
 
