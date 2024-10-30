@@ -13,7 +13,8 @@ It is a **fact** that people who are passionate about a topic or subject tend to
 
 That being said I'd consider myself type 3 as I never did CS at school and everything I know comes from experience and passion.
 
-Some of my big learning experiences that make me stand out vs other engineers at work are the following: i
+Some of my big learning experiences that make me stand out vs other engineers at work are the following:
+
 __NOTE:__ This is of course very Ops based, since that's where I started my career in tech.
 
 1. Had to learn an amazing amount of information in order to even get the Homelab usable, from installing the OS to setting up the additional drives and mount points... Setting up a secure SSH configuration, users and credentials, permissions on files, etc.
