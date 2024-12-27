@@ -12,6 +12,7 @@ export const sharedPageComponents: SharedLayout = {
       GitHub: "https://github.com/mvaldes14",
       Twitch: "https://twitch.tv/mvaldes_",
       Linkedin: "https://links.mvaldes.dev/linkedin",
+      Discord: "https://discord.gg/bMrKXDPz",
     },
   }),
 }
