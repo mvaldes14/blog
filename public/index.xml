@@ -10,7 +10,13 @@
     <link>https://mvaldes.dev/</link>
     <guid>https://mvaldes.dev/</guid>
     <description>Welcome to my Personal Site! Here, I will share my experiences as I work on various projects or learn new skills, often inspired by what catches my interest ...</description>
-    <pubDate>Wed, 18 Dec 2024 21:35:20 GMT</pubDate>
+    <pubDate>Fri, 20 Dec 2024 21:31:47 GMT</pubDate>
+  </item><item>
+    <title>Golang Interafaces are easy</title>
+    <link>https://mvaldes.dev/coding/golang-interfaces-easy</link>
+    <guid>https://mvaldes.dev/coding/golang-interfaces-easy</guid>
+    <description>Recently been doing a lot of Golang for my twitch bot (I stream btw, rarely but I do). So while setting up the web-server I wanted to customize some of the functionality so each request checks the headers and respond differently based on said headers.</description>
+    <pubDate>Wed, 18 Dec 2024 06:00:00 GMT</pubDate>
   </item><item>
     <title>My New Blog with Customized Publishing Solution</title>
     <link>https://mvaldes.dev/life/blog-obsidian</link>
@@ -59,12 +65,6 @@
     <guid>https://mvaldes.dev/homelab/selfhosted-2024</guid>
     <description>An update on my journey for 2024.</description>
     <pubDate>Mon, 25 Mar 2024 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Look ma I&#039;m a Streamer</title>
-    <link>https://mvaldes.dev/life/streaming</link>
-    <guid>https://mvaldes.dev/life/streaming</guid>
-    <description>Look Ma' I'm a streamer now.</description>
-    <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
