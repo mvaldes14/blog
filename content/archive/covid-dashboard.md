@@ -4,7 +4,7 @@ date: 2020-03-18
 description: A little something to showcase what you can do with data and Elastic.
 status: Complete
 tags: 
-- elk
+- elastic
 ---
 
 So as most people I've been stuck at home so it gave me some extra time to tinker around the dataset on the excellent dashboard by [Johns Hopkins CSSE](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) you should check that out if you haven't already, it's quite popular. Anyways found out that they publish all of the data behind the dashboard to their [Github]([https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)) so wrote a quick script to pull the csv files for March, transform the data via Logstash and push it into my local Elasticsearch instance.

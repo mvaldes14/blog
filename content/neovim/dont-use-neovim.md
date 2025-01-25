@@ -37,7 +37,8 @@ New version requires a depepdency on plugin 'author/plugin-name' please include 
 
 You gotta read a bit and try some stuff on your own. 
 
->[!info] If you haven't cared enough to try on your own why should I?
+>[!tip] 
+> If you haven't cared enough to try on your own why should I?
 
 This is in general an __AWESOME skill to have as an engineer, be resourceful, don't be afraid to try and fail__.  If you truly did best effort it's still broken then by all means ask away, but seriously don't just ask or inquire if you haven't done the minimal effort of even trying.  It's something I always teach new people I train on my teams throughout my career, basic troubleshooting skills which may come out as an asshole move but trust me down the road they all thank me.
 

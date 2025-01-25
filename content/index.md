@@ -1,6 +1,7 @@
 ---
 title: Welcome to my blog!
 status: complete
+date: 2024-12-01
 ---
 
 Welcome to my Personal Site! Here, I will share my experiences as I work on various projects or learn new skills, often inspired by what catches my interest. Most of the time, it's just me exploring exciting and cool topics or tools.
