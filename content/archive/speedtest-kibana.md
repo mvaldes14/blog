@@ -4,7 +4,7 @@ date: 2020-08-30
 description: A fun way to see if your ISP is really giving you what you pay for.
 status: Complete
 tags: 
- - elk 
+ - elastic 
  - homelab 
 ---
 
