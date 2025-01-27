@@ -1,5 +1,5 @@
 ---
-title: Golang Interafaces are easy
+title: Golang Interfaces are easy
 date: 12/18/2024
 draft: false
 tags:
