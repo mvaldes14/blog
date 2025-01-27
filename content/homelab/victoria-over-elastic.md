@@ -44,7 +44,8 @@ So I will keep testing VictoriaLogs and see how it works. Granted I already had 
 
 Overall I'm happy with the setup and how it performs with my limited amount of logs in the Homelab so we will see how it behaves in the long run.
 
-So goodbye Elastic, you were great but it's not you, it's me
+So goodbye Elastic, you were great but it's not you, it's me.
+
 **P.D** You will always have a special place in my heart.
 
 <img src="https://s3.mvaldes.dev/blog/bye-elastic.png" alt="Bye Elastic"  width=500px />

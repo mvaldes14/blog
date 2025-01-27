@@ -7,5 +7,7 @@ clean:
 	rm -rf public
 
 publish:
-	npx quartz sync
+	git add .
+	git commit -n "new post"
+	git push
 
