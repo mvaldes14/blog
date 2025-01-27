@@ -8,6 +8,6 @@ clean:
 
 publish:
 	git add .
-	git commit -n "new post"
+	git commit -m "new post"
 	git push
 
