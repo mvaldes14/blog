@@ -27,7 +27,7 @@ So what alternatives do we have? Glad you asked.
 - HCL: As a Terraform enjoyer, I like the language and find it easy to understand, with the constraint that it's mostly used in HashiCorp tooling, so it's a bit restrictive.
 - TOML: Haven't used it much, so nothing to say here, but I know it's a good alternative.
 
-Whatever you end up picking, remember there are tools out there to help make it easier to work with, like yj.
+Whatever you end up picking, remember there are tools out there to help make it easier to work with, like [yj](https://github.com/sclevine/yj).
 
 YAML is King. Change my mind, please!
 
