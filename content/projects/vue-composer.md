@@ -2,7 +2,7 @@
 title: Docker-compose with vue
 date: 2020-06-02
 description: A bad attempt on building something with Vue.
-status: "Complete"
+draft: false
 tags:
 - frontend
 ---

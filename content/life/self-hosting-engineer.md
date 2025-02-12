@@ -2,7 +2,7 @@
 title: Why Self-Hosting made me a better engineer
 date: 2024-10-30
 description: Why I'm potentially better than you homie
-status: Complete
+draft: false 
 tags: 
 - career
 ---

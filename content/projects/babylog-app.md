@@ -2,7 +2,7 @@
 title: Baby Tracker Vue App
 date: 2022-03-27
 description: New baby, new app. An actual side project that was complete and then vanished!.
-status: "Complete"
+draft: false
 tags:
 - frontend
 ---

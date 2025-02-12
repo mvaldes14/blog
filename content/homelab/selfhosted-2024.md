@@ -2,7 +2,7 @@
 title: Self Hosted in 2024
 date:  2024-03-25
 description: An update on my journey for 2024
-status: Complete
+draft: false
 tags: 
 - homelab
 ---

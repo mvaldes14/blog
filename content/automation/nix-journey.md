@@ -2,7 +2,7 @@
 title: I Love/Hate Nix
 date: 2024-05-06
 description: I use nix (btw)
-status: Complete
+draft: false
 tags: 
 - nix 
 - wsl

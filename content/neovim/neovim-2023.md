@@ -2,7 +2,7 @@
 title: Neovim in 2023
 date: 2023-09-19
 description: Using Neovim entirely for over a year now
-status: Complete
+draft: false
 tags: 
 - neovim
 ---

@@ -2,7 +2,7 @@
 title: Blog 3.0
 date: 2023-02-09
 description: New Year, New blog again?!?
-status: Complete
+draft: false 
 tags: 
 - random
 ---

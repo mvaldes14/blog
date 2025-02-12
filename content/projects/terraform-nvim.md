@@ -2,7 +2,7 @@
 title: Navigating Terraform manifests in Neovim
 date: 2023-07-28
 description: My first neovim plugin that actually works.
-status: "Complete"
+draft: false
 tags:
 - neovim
 - IaC

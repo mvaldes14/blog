@@ -2,7 +2,7 @@
 title: Ruby Server Scraper
 date: 2022-04-17
 description: Automating site scraping because engineers are lazy right?!.
-status: Complete
+draft: false
 tags: 
 - automation
 ---

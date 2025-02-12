@@ -1,11 +1,10 @@
 ---
 title: Golang Interfaces are easy
-date: 12/18/2024
+date: 2024-12-18
 draft: false
 tags:
   - coding
   - golang
-status: complete
 ---
 
 Recently been doing a lot of [[go#Interfaces]] for my twitch bot (I stream btw, rarely but I do). So while setting up the web-server I wanted to customize some of the functionality so each request checks the headers and respond differently based on said headers. So i went down the rabbit hole into Middleware and based on a book I'm reading called "Let's Go" by Alex Edwards you can pretty much "overload" the default methods as long as it satisfies the interface.

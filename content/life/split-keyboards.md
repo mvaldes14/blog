@@ -2,7 +2,7 @@
 title:  Split Keyboards are fun
 date: 2024-09-24
 description: Stay awhile and listen kid.
-status: Complete
+draft: false 
 tags: 
 - random
 ---

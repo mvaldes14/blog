@@ -2,7 +2,7 @@
 title: My SelfHosted Journey in [2022]
 date: 2022-03-24
 description: What I'm currently running in the homelab 2022 edition
-status: Complete
+draft: false
 tags: 
 - homelab
 ---
