@@ -1,6 +1,6 @@
 ---
 title: My New Blog with Customized Publishing Solution
-date: 12/17/2024
+date: 2025-12-17
 description: Exploring Quartz as a customizable alternative to Obsidian Publish for my personal blog.
 draft: false
 tags:

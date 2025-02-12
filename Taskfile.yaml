@@ -1,0 +1,28 @@
+version: "3"
+vars:
+  vault-win: /mnt/c/Users/migue/Documents/wiki/02-Areas/Blog/
+  vault-lin: /home/mvaldes/Obisidian/wiki/02-Areas/Blog/
+tasks:
+  dev:
+    cmds:
+      - npx quartz build --serve
+  clean:
+    cmds:
+      - rm -rf public
+  publish:
+    cmds:
+      - git add .
+      - git commit -m "new post"
+      - git push
+  sync-win:
+    cmds:
+      - echo "Syncing vault-blog"
+      - rsync -r {{.vault-win}} content
+    status:
+      - test -d {{.vault-win}}
+  sync-lin:
+    cmds:
+      - echo "Syncing vault-blog"
+      - rsync -r {{.vault-lin}} content
+    status:
+      - test -d {{.vault-lin}}

@@ -2,7 +2,7 @@
 title: Tailscale is pretty cool 
 date: 2024-07-21
 description: I can access my homelab anywhere, hbu?
-status: complete
+draft: false
 tags: 
 - homelab
 ---

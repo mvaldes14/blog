@@ -2,7 +2,7 @@
 title: Windows is decent again?
 date: 2020-07-19
 description: Windows can do what now?. Honestly shocked on what you can do in a windows workstation now.
-status: complete
+draft: false 
 tags: 
 - random
 ---

@@ -2,7 +2,7 @@
 title: The Steam Deck is awesome
 date: 2024-01-12
 description: I'm addicted to metroidvania games and my life is hell.
-status: Complete
+draft: false 
 tags: 
 - random
 - gaming

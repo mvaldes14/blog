@@ -2,7 +2,7 @@
 title: Meal Notifier with Go
 date: 2024-05-03
 description: Kid's nutrition is important, so let's automate it
-status: Complete
+draft: false
 tags:
 - automation
 - random

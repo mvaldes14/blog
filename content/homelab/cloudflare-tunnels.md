@@ -2,7 +2,7 @@
 title: Cloudflare Tunnels are the bomb
 date: 2023-02-25
 description: Want to expose things to the internet safely? Use Tunnels!
-status: Complete
+draft: false
 tags: 
 - homelab
 - k8s

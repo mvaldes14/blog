@@ -2,7 +2,7 @@
 title: Chef Tips and Tricks
 date: 2022-12-10
 description: Chef tips and tricks I wished I knew when I started
-status: Complete
+draft: false
 tags: 
 - chef
 - automation

@@ -2,7 +2,7 @@
 title: Blog 2.0
 date: 2019-01-21
 description: New Year, New blog? Why not....It's free so YOLO.
-status: Complete
+draft: false 
 tags: 
 - life 
 ---

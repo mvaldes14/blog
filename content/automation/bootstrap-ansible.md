@@ -2,7 +2,7 @@
 title: Bootstrap your system with ansible
 date: 2019-08-20
 description: Tired of setting up your system whenever you change distros? So am I.
-status: Complete
+draft: false
 tags: 
 - automation
 - ansible

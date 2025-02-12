@@ -2,7 +2,7 @@
 title: Introducing asdf-tea
 date: 2023-07-24
 description: An asdf plugin to install gitea tea cli utility
-status: "Complete"
+draft: false
 tags: 
 - cli
 ---
