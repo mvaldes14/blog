@@ -12,8 +12,7 @@ So the first oportunity arrived in 2025 when a fellow Latino content-creator [Tr
 
 **NOTE**: It is in spanish cause if you didn't know... I'm Mexican.
 
-![Workshop](https://www.youtube.com/live/dqVqNxwXHy8?si=1puB3Ek4BIOV7wqy)
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dqVqNxwXHy8?si=uvGEKeWdW_JDHcyn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 This is hopefully the first of many down the road!.
 
