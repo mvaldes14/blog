@@ -4,14 +4,13 @@ COPY package.json .
 COPY package-lock.json* .
 RUN npm ci
 
-FROM node:20-slim AS site
+FROM node:20-slim AS blog
 WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/ /usr/src/app/
 COPY . .
-CMD ["npx", "quartz", "build"]
+RUN npx quartz build
 
-
-FROM nginx:latest
-COPY --from=site /usr/src/app/public /usr/share/nginx/html
+FROM nginx:latest AS final
+COPY --from=blog /usr/src/app/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
