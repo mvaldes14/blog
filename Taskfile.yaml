@@ -1,8 +1,4 @@
 version: "3"
-vars:
-  VAULT_WSL: "/mnt/c/Users/migue/Documents/wiki/02-Areas/Blog/"
-  VAULT_LIN: "/home/mvaldes/Obsidian/wiki/02-Areas/Blog/"
-  DEST: "content"
 
 tasks:
   dev:
@@ -18,23 +14,14 @@ tasks:
   publish:
     desc: "Commit and push changes"
     cmds:
-      - git diff --quiet || (git add . && git commit -m "new post" && git push)
+      - git add . 
+      - git commit -m "new post" 
+      - git push
 
-  sync-wsl:
-    desc: "Sync blog content from WSL"
+  sync:
+    desc: "Sync blog content from Obsidian"
     cmds:
-      - echo "Syncing vault-blog from WSL..."
-      - rsync -av --delete "{{.VAULT_WSL}}" "{{.DEST}}"
-    status:
-      - test -d "{{.VAULT_WSL}}"
-
-  sync-lin:
-    desc: "Sync blog content from Linux"
-    cmds:
-      - echo "Syncing vault-blog from Linux..."
-      - rsync -av --delete "{{.VAULT_LIN}}" "{{.DEST}}"
-    status:
-      - test -d "{{.VAULT_LIN}}"
-
-
-
+      - cmd: rsync -r /mnt/c/Users/migue/Documents/wiki/01-Projects/Blog/ content
+        precondition: uname -a | grep -i linux
+      - cmd: rsync -r ~/Obsidian/wiki/01-Projects/Blog/ content
+        precondition: uname -a | grep -i darwin 
