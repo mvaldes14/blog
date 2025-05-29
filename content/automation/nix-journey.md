@@ -10,7 +10,7 @@ tags:
 
 I've always tried to automate my working environments in either a personal or professional setup. So years ago, I created a repository for my dotfiles which has been curated over the years with my custom applications, aliases or anything that I found useful or repetitive. All of that worked out just fine, at some point I even went all in into actual automation by using Ansible to set up my multiple machines, which also has its own repository if you are curious.
 
-Life was good, and it seems like people were using either Ansible or asdf (hell I even wrote a plugin for that [ remember](http://localhost:3000/projects/asdf-tea)) to sort of automate their development setups, then Nix appeared with that damn smile.
+Life was good, and it seems like people were using either Ansible or asdf (hell I even wrote a plugin for that [remember](http://localhost:3000/projects/asdf-tea)) to sort of automate their development setups, then Nix appeared with that damn smile.
 
 <img src="https://s3.mvaldes.dev/blog/nix-meme.png" alt="that smile" />
 

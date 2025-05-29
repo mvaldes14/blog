@@ -32,7 +32,7 @@
       '';
     };
     devShell.x86_64-linux = pkgs.mkShell {
-      inputsFrom = [pkgs.nodejs self.packages.${system}.default];
+      inputsFrom = with pkgs; [nodejs self.packages.${system}.default];
       shellHook = ''
         echo  "quartz is ready"
       '';

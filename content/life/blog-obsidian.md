@@ -5,7 +5,6 @@ description: Exploring Quartz as a customizable alternative to Obsidian Publish 
 draft: false
 tags:
   - obsidian
-  - quartz
 status: complete
 ---
 
