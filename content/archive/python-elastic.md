@@ -2,7 +2,7 @@
 title: Twitter Sentiment Analysis with Python & Elasticsearch
 date: 2019-05-13
 description: Using Elasticsearch to do Sentiment Analysis
-status: Complete
+draft: false 
 tags: 
 - automation
 - elastic 

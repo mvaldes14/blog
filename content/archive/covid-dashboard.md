@@ -2,7 +2,7 @@
 title: COVID Data in Elasticsearch & Kibana
 date: 2020-03-18
 description: A little something to showcase what you can do with data and Elastic.
-status: Complete
+draft: false
 tags: 
 - elastic
 ---

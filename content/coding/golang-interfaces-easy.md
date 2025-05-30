@@ -1,5 +1,6 @@
 ---
 title: Golang Interfaces are easy
+description: When things click life is awesome
 date: 2024-12-18
 draft: false
 tags:

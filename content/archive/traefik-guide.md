@@ -2,7 +2,7 @@
 title: Traefik Quick Start
 date: 2020-03-13
 description: Container networking is a confusing, just use Traefik instead.
-status: complete
+draft: false
 tags: 
 - homelab
 ---

@@ -2,7 +2,7 @@
 title: Monitor your ISP Speed in Kibana
 date: 2020-08-30
 description: A fun way to see if your ISP is really giving you what you pay for.
-status: Complete
+draft: false 
 tags: 
  - elastic 
  - homelab 
