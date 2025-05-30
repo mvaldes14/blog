@@ -1,5 +1,6 @@
 ---
 title: n8n is pure awesomeness
+description: life without automation is sad
 date: 2025-03-14
 draft: true
 tags:

@@ -1,5 +1,6 @@
 ---
 title: Bye Elastic, Hola Victoria
+description: Why I switched over to a new tool
 date: 2025-01-24
 draft: false 
 tags:

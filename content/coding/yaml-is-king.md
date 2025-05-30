@@ -1,5 +1,6 @@
 ---
 title: Yaml is King change my mind, please!
+description: YAML is king and I hate it.
 date: 2025-02-02
 draft: false 
 tags: 

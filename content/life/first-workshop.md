@@ -1,6 +1,7 @@
 ---
 title: My First Workshop
 date: 2025-02-11
+description: My first ever workshop, it was fun!
 draft: false
 tags:
 - life

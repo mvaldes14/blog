@@ -2,7 +2,7 @@
 title: My Home Docker Setup[2020]
 date: 2020-03-04
 description: A rundown of what i have in my homelab in 2020
-status: Complete
+draft: false 
 tags: 
 - container
 ---
