@@ -10,10 +10,10 @@ const config: QuartzConfig = {
     analytics: {
       provider: "umami",
       host: "https://umami.mvaldes.dev",
-      websiteId: "16f98bd2-79e3-44d7-af7a-13169e391120",
+      websiteId: "698bd806-9444-4e14-b33b-3713ced43ad4",
     },
     locale: "en-US",
-    baseUrl: "mvaldes.dev",
+    baseUrl: "blog.mvaldes.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: true,
