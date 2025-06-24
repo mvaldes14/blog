@@ -5,7 +5,6 @@ date: 2025-03-14
 draft: true
 tags:
   - automation
-  - n8n
   - pending
 ---
 One of the big benefits of having the homelab and many services running locally is that I can start connecting them together and using them for various things. Aka, automating like crazy.

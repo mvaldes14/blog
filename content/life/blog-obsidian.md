@@ -1,10 +1,10 @@
 ---
-title: My New Blog with Customized Publishing Solution
-date: 2025-12-17
+title: Obsidian Like Blog
+date: 2024-12-17
 description: Exploring Quartz as a customizable alternative to Obsidian Publish for my personal blog.
 draft: false
 tags:
-  - obsidian
+  - blog
 ---
 
 After a year of immersing myself in the world of Obsidian, I've grown accustomed to using it for everything from notes and posts to task tracking and work documentation. The allure of publishing directly from Obsidian or Neovim with the Obisidian plugin was strong, but I eventually stumbled upon [Quartz](https://quartz.jzhao.xyz/), an alternative that shares many similarities with Obsidian Publish while offering additional customization options.
