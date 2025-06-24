@@ -1,7 +1,3 @@
-# 2025-12
-
-- [My New Blog with Customized Publishing Solution](https://mvaldes.dev/life/blog-obsidian)
-
 # 2025-02
 
 - [Are you stuck?](https://mvaldes.dev/life/directionless)
@@ -15,6 +11,8 @@
 # 2024-12
 
 - [Golang Interfaces are easy](https://mvaldes.dev/coding/golang-interfaces-easy)
+- [Obsidian Like Blog](https://mvaldes.dev/life/blog-obsidian)
+- [Welcome to my blog!](https://mvaldes.dev//index)
 - [You shouldn't use Neovim](https://mvaldes.dev/neovim/dont-use-neovim)
 
 # 2024-10
