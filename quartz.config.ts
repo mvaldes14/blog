@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins";
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Blog",
-    pageTitleSuffix: "mvaldes",
+    pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -90,6 +90,7 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
+      Plugin.CNAME({name: "blog.mvaldes.dev"})
     ],
   },
 };
