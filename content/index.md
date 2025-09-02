@@ -1,3 +1,12 @@
+---
+title: Welcome to my blog
+description: In here you will find random stuff related to tech, life, etc.
+---
+In here you will find random stuff related to tech, life, etc.
+Hope you find some of it useful.
+
+
+Index of old posts:
 # 2025-02
 
 - [Are you stuck?](https://blog.mvaldes.dev/life/directionless)

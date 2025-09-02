@@ -41,6 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
+    Component.MobileOnly(Component.Spacer()),
     Component.DesktopOnly(
       Component.Explorer({
         title: "Navigation",
@@ -48,7 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
     ),
   ],
   right: [
-    Component.Darkmode(),
+    Component.Graph(),
     Component.RecentNotes({
       showTags: false,
     }),
