@@ -1,28 +1,40 @@
 version: "3"
 vars:
-  vault-win: /mnt/c/Users/migue/Documents/wiki/02-Areas/Blog/
-  vault-lin: /home/mvaldes/Obisidian/wiki/02-Areas/Blog/
+  VAULT_WSL: "/mnt/c/Users/migue/Documents/wiki/02-Areas/Blog/"
+  VAULT_LIN: "/home/mvaldes/Obsidian/wiki/02-Areas/Blog/"
+  DEST: "content"
+
 tasks:
   dev:
+    desc: "Start the Quartz development server"
     cmds:
       - npx quartz build --serve
+
   clean:
+    desc: "Remove generated public files"
     cmds:
       - rm -rf public
+
   publish:
+    desc: "Commit and push changes"
     cmds:
-      - git add .
-      - git commit -m "new post"
-      - git push
-  sync-win:
+      - git diff --quiet || (git add . && git commit -m "new post" && git push)
+
+  sync-wsl:
+    desc: "Sync blog content from WSL"
     cmds:
-      - echo "Syncing vault-blog"
-      - rsync -r {{.vault-win}} content
+      - echo "Syncing vault-blog from WSL..."
+      - rsync -av --delete "{{.VAULT_WSL}}" "{{.DEST}}"
     status:
-      - test -d {{.vault-win}}
+      - test -d "{{.VAULT_WSL}}"
+
   sync-lin:
+    desc: "Sync blog content from Linux"
     cmds:
-      - echo "Syncing vault-blog"
-      - rsync -r {{.vault-lin}} content
+      - echo "Syncing vault-blog from Linux..."
+      - rsync -av --delete "{{.VAULT_LIN}}" "{{.DEST}}"
     status:
-      - test -d {{.vault-lin}}
+      - test -d "{{.VAULT_LIN}}"
+
+
+
