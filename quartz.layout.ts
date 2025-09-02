@@ -49,11 +49,14 @@ export const defaultContentPageLayout: PageLayout = {
     ),
   ],
   right: [
-    Component.Graph(),
     Component.RecentNotes({
-      showTags: false,
+      showTags: true,
+      limit: 5,
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.ConditionalRender({
+      component: Component.TableOfContents(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
 }
 

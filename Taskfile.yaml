@@ -23,10 +23,5 @@ tasks:
     cmds:
       - cmd: rsync -r /mnt/c/Users/migue/Documents/wiki/01-Projects/Blog/ content
         precondition: uname -a | grep -i linux
-      - cmd: rsync -r ~/Obsidian/wiki/01-Projects/Blog/ content
+      - cmd: rsync -r ~/Obsidian/blog
         precondition: uname -a | grep -i darwin 
-
-  index:
-    desc: "Runs the index script"
-    cmds:
-      - python ~/git/scripts/blog_index/main.py

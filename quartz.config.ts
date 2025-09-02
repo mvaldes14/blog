@@ -3,8 +3,8 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Blog",
-    pageTitleSuffix: "",
+    pageTitle: "Miguel Valdes",
+    pageTitleSuffix: "SRE",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -85,7 +85,7 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
-      Plugin.CNAME({name: "blog.mvaldes.dev"})
+      // Plugin.CNAME({ name: "blog.mvaldes.dev" }),
     ],
   },
 }
