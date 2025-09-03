@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -27,7 +27,7 @@ jobs:
           echo "IMAGE_TAG=$TIMESTAMP" >> $GITHUB_OUTPUT
 
       - name: Docker Build and Push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           push: true
           tags: rorix/blog:${{steps.generate_tag.outputs.IMAGE_TAG}}
