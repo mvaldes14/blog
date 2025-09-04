@@ -7,7 +7,7 @@ tags:
 - homelab
 ---
 
-It's been 4 years since the self-hosted adventure began and it gets bigger and weirder as seasons come and go. What started with a single Dell refurbished machine (which i still use) to run certain services back in [2020](https://mvaldes.dev/blog/docker-home-setup/) has now evolved into an actual mini rack with some serious network devices and more machines. So lets see what changed sine my last post back in [2022](https://mvaldes.dev/blog/selfhosted-2022)
+It's been 4 years since the self-hosted adventure began and it gets bigger and weirder as seasons come and go. What started with a single Dell refurbished machine (which i still use) to run certain services back in [2020](https://blog.mvaldes.dev/archive/docker-home-setup/) has now evolved into an actual mini rack with some serious network devices and more machines. So lets see what changed sine my last post back in [2022](https://blog.mvaldes.dev/homelab/selfhosted-2022)
 
 ## An Actual Rack Arrived...
 Bought a home in the crazy economy.... it was a wild ride but we are pretty happy with what we got, which meant that I no longer had to keep everything in the closet, this was a big change at a personal level but also on my self-hosting cause that meant i could actually get a rack to put everything that I owned which back then was still 1 Dell Machine SFF, 1 Dell 3080 and my Raspberry Pi. Also by having more space meant i needed to think seriously how I wanted my networking to look like. 
@@ -32,11 +32,11 @@ Next step was to solve a very simple problem, none of my machines were powerful 
 The Homelab was ready. We scaled from 2 to 4 machines + raspberry. So my computing power was ready for the workloads I had in mind.
 
 ## Services found a new home
-Previously everything I ran was done via docker since it was way easier back then an also my Kubernetes knowledge was pretty limited, so with that in mind in late 2023 I made the jump and deleted everything running under docker (had all of the manifests backed up just in case) which at the time was around 20 stacks with 4X containers all the way from monitoring workloads like Prometheus  + Grafana + Elasticsearch all the way into Nextcloud and Photoprism to replace things I've previously payed for. You can read more on what i ran back then [here](https://mvaldes.dev/blog/selfhosted-2022/)
+Previously everything I ran was done via docker since it was way easier back then an also my Kubernetes knowledge was pretty limited, so with that in mind in late 2023 I made the jump and deleted everything running under docker (had all of the manifests backed up just in case) which at the time was around 20 stacks with 4X containers all the way from monitoring workloads like Prometheus  + Grafana + Elasticsearch all the way into Nextcloud and Photoprism to replace things I've previously payed for. You can read more on what i ran back then [here](https://blog.mvaldes.dev/homelab/selfhosted-2022/)
 
 Since theres no better way to learn than doing I've embarked on the Kubernetes path and started to build everything up again by generating the manifests that were basically composed of a deployment + service. Another big addition is that I fully embraced the GitOps flow so everything was being managed by FluxCD so it was a bit complicated at first to learn a brand new tool on top of a new container runtime and workflow, but it was worth the frustration as I now see the benefits of using this paradigm.
 
-My deployments are now fully automated and in case I ever need to rebuild my entire Homelab all I would need is FluxCD to manage everything for me since all of the manifests now reside in a [Github Repo](https://github.com/mvaldes14/k8s-apps/) .
+My deployments are now fully automated and in case I ever need to rebuild my entire Homelab all I would need is FluxCD to manage everything for me since all of the manifests now reside in a [Github Repo](https://github.com/mvaldes14/k8s-apps/).
 
 ## New stuff I'm running
 With everything automated and ready... the self-hosting bug keeps increasing and ever time I see a new service pop up over in Reddit I have to try it. With the new workflow I can cook up a deployment + service and hook it up to my Cloudflared tunnel running within K8s and I can get a new service running in minutes.

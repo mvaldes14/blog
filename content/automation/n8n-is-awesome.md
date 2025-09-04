@@ -18,22 +18,22 @@ Now, whenever I do automation at home, 90% of the times it is a very repetitive 
 
 That approach worked for a couple of years, especially for notifications whenever something went down in the homelab that needed my attention and things like Grafana couldn't handle already, so with more services running locally and more integrations running I discovered the no-code automation tools that made things so simple that even someone that isn't a “tech bro” would be able to use them. On top of that, the hype with AI made automation even more desirable since it could also be expanded to develop these so-called “AI Agents,” which to me are basically – and this is going to be a hot take – AI agents = big cronjobs that either run on a schedule or react to an event, following an event-driven architecture design, but doesn’t take off the fact they pretty much just do the same methodology of the automation pattern mentioned above.
 
-So, enough history, what am I using and what am I doing with it? – I’m running a local version of [n8n](https://n8n.io/) which again you can get started using for free but since I have the hardware I always try to run things myself to keep my data under control. Now, what am I using it for? – Don’t have an answer per se for that since it can pretty much connect to thousands of services so I’m going to give you some example workflows.
+So, enough history.... What am I using?; And what am I doing with it? – I’m running a local version of [n8n](https://n8n.io/) which again you can get started using for free but since I have the hardware I always try to run things myself to keep my data under control. Now, what am I using it for? – Don’t have an answer per se for that since it can pretty much connect to thousands of services, so I’m going to give you some example workflows.
 ️
 ## Get the weather
-This one is kind of dumb but as a busy father I need to be prepared for the weather so the kids use the proper atire for the daily activities so I have designed a simple workflow that runs every day at 7AM giving me the current weather in a notification via Telegram.
+This one is kind of dumb but as a busy father I need to be prepared for the weather outside, so the kids use the proper layers for the daily activities, so I have designed a simple workflow that runs every day at 7AM giving me the current weather in a notification via Telegram.
 
 ![[Pasted image 20250314143406 1.png]]
 
 ## Daily review of my Todoist tasks
-Todoist is my default task manager so as someone that *tries* to follow GTD, I tend to dump everything out of my brain into the tool quickly and every now and then I review the list of tasks in the system, but since things then to go all over the place within my project I needed to go into each one of them to try and find what was overdue, without labels or dates. Well no more as I have a workflow that kicks off and does that for me, everything that don't match a filter or criteria will get a label `@review` so I can easily spot them and organize my tasks.
+Todoist is my default task manager so as someone that *tries* to follow GTD, I tend to dump everything out of my brain into the tool quickly and every now and then I review the list of tasks in the system, but since things then to go all over the place within my project I needed to go into each one of them to try and find what was overdue, without labels or dates. Well no more as I have a workflow that kicks off and does that for me, everything that don't match a filter or criteria will get a label `@review`, so I can easily spot them and organize my tasks.
 
 ![[Pasted image 20250314143645 1.png]]
 
-## Sync Tasks-Issues in Github
-Some of the tasks in my manager are related to small little projects I have on Github like my twitch-bot or my k8s homelab applications, so whenever I want to do something or try a new tool I create a "ticket" for myself, which having in todoist is probably enough but since those project are open for the public I once had some issues created in one of the repos for a [neovim plugin](https://mvaldes.dev/projects/terraform-nvim) I made and I completely ignored it for weeks since i rarely review that section within Github so in order to make it all easy to find and use the workflow syncs things between systems now.
+## Sync Tasks-Issues in GitHub
+Some of the tasks in my manager are related to small little projects I have on GitHub like my twitch-bot or my k8s Homelab applications, so whenever I want to do something or try a new tool I create a "ticket" for myself, which having in Todoist is probably enough but since these projects are open for the public I once had some issues created in one of the repositories for a [neovim plugin](https://blog.mvaldes.dev/projects/terraform-nvim) created by me and I completely ignored it for weeks since I rarely review that section within GitHub so in order to make it all easy to find and use the workflow syncs things between systems now.
 
-This one took a lot of time as I ended up having repetitive things in either tool so a database had to be included to keep track of what was already in a either system.
+This one took a lot of time as I ended up having repetitive things in either tool, so a database had to be included to keep track of what was already in a either system.
 
 ![[Pasted image 20250314144050 1.png]]
 

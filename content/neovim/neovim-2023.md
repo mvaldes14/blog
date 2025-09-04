@@ -49,4 +49,4 @@ My personal setup looks like this:
 Maybe you will end up writing your own plugin for something that you wanted to do like maybe running [terraform within your buffers/windows](https://github.com/mvaldes14/terraform.nvim).
 Take a leap and give it a go, have some patience and join the cult.
 
-If you want to check out how to make your config look like mine, check out my dotfiles [here](https://git.mvaldes.dev/dotfiles)
+If you want to check out how to make your config look like mine, check out my dotfiles [here](https://links.mvaldes.dev/dotfiles)
