@@ -7,9 +7,13 @@ tags:
 - blog
 ---
 
+# UPDATE
+I NO LONGER USE ASDF NOT HOST MY OWN GIT
+
+# WHY?
 I've been using asdf a lot lately to manage all of my languages versions and random packages that simply do not have an easy way to install
 or are just convenient to have. So with that in mind I've tried to adapt the CLI workflow for my git projects, and I'm already pretty used to using `gh` for GitHub,
-but since most of my projects live on my personal [Gitea instance](https://git.mvaldes.dev) I was looking for a similar experience where one could simply create PRs, Issues, etc.
+but since most of my projects live on my personal [Gitea instance](https://github.com/mvaldes14) I was looking for a similar experience where one could simply create PRs, Issues, etc.
 Thankfully the Gitea project offers a similar CLI that can almost go toe to toe vs Github but there was a minor problems. You needed to download the compiled binary and then put it in your path... give it the proper permissions and that was just too much,
 So I spent an hour or so reading how asdf plugins work and decided to make my own.
 

@@ -7,7 +7,7 @@ tags:
 - homelab
 ---
 
-In my previous [post](https://blog.mvaldes.dev/posts/docker-home-setup) talked about how i ended up using Traefik instead of the good ol' reliable NGINX, so wanted to expand a bit more for people that may want to test this out and not want to spend hours like i did testing and reading documentation, not saying you shouldn't cause you definitely will but if you want something quick, then this guide is for you.
+In my previous [post](https://blog.mvaldes.dev/archive/docker-home-setup) talked about how i ended up using Traefik instead of the good ol' reliable NGINX, so wanted to expand a bit more for people that may want to test this out and not want to spend hours like i did testing and reading documentation, not saying you shouldn't cause you definitely will but if you want something quick, then this guide is for you.
 
 ## Create your network
 
