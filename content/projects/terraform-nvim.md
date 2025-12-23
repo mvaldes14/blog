@@ -1,11 +1,10 @@
 ---
 title: Navigating Terraform manifests in Neovim
 date: 2023-07-28
-description: My first neovim plugin that actually works.
 draft: false
 tags:
 - neovim
-- IaC
+- iac 
 ---
 
 Part of my work requires me to work with terraform...a lot of terraform since everything has to be done via IaC, or it simply doesn't go through AWS, so since my editor of choice is Neovim and anyone can basically create any extension to do whatever...I figured why not have a dedicated terraform plugin to do some planing and exploring?!. 

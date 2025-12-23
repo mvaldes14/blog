@@ -1,7 +1,6 @@
 ---
 title: Pihole is pure awesomeness
 date: 2020-08-26
-description: Why are you not running PiHole in your own network?
 draft: false
 tags: 
 - homelab

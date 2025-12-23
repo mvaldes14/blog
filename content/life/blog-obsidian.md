@@ -1,7 +1,6 @@
 ---
 title: Obsidian Like Blog
 date: 2024-12-17
-description: Exploring Quartz as a customizable alternative to Obsidian Publish for my personal blog.
 draft: false
 tags:
   - blog

@@ -1,10 +1,9 @@
 ---
 title: My First Workshop
 date: 2025-02-11
-description: My first ever workshop, it was fun!
 draft: false
 tags:
-- life
+- random
 - career
 ---
 Part of my resolutions for this year is to do more public speaking so I've been looking for oportunities to do so at local meetups, company conferences or anything basically.

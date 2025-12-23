@@ -1,6 +1,5 @@
 ---
 title: You shouldn't use Neovim
-description: If you are not ready to cry a bit and read documentation, neovim is not for you.
 date: 2024-12-27
 draft: false
 tags: 

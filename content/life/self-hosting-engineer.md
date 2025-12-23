@@ -1,10 +1,10 @@
 ---
 title: Why Self-Hosting made me a better engineer
 date: 2024-10-30
-description: Why I'm potentially better than you homie
 draft: false 
 tags: 
 - career
+- random
 ---
 
 It is a **fact** that people who are passionate about a topic or subject tend to know more or do better at said topics, so in the case of Software Engineers you probably have run into couple different types of engineers, which in my humble opinion (__based on working in the industry for 12 years now__); These are the 3 big "types":
@@ -45,5 +45,4 @@ Yes even those serverless functions require servers my dudes LOL.
 
 See you on the next one.
 Adios 👋
-
 

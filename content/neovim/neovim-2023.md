@@ -1,7 +1,6 @@
 ---
 title: Neovim in 2023
 date: 2023-09-19
-description: Using Neovim entirely for over a year now
 draft: false
 tags: 
 - neovim
@@ -40,13 +39,11 @@ Which makes this not exactly beginner-friendly.
 If you endured and came out triumphant you will be happy you became a neovim zealot, you will look cool when your dev friends pair with you and you will feel like a freaking hacker.
 Don't trust me?; Just watch either [@teej](https://www.twitch.tv/teej_dv) or [@theprimeagen](https://www.twitch.tv/ThePrimeagen) code over at twitch and prove me wrong.
 
-
 My personal setup looks like this:
-{% image src="nvim.png" alt="Neovim Setup" /%}
-
+<img src="https://s3.mvaldes.dev/blog/nvim.png" alt="neovim setup"/>
 
 ### Conclusion
 Maybe you will end up writing your own plugin for something that you wanted to do like maybe running [terraform within your buffers/windows](https://github.com/mvaldes14/terraform.nvim).
 Take a leap and give it a go, have some patience and join the cult.
 
-If you want to check out how to make your config look like mine, check out my dotfiles [here](https://links.mvaldes.dev/dotfiles)
+If you want to check out how to make your config look like mine, check out my dotfiles [here](https://git.mvaldes.dev/dotfiles)

@@ -10,9 +10,10 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       X: "https://x.com/mr_mvaldes",
       GitHub: "https://github.com/mvaldes14",
-      Twitch: "https://twitch.tv/mvaldes_",
+      Twitch: "https://links.mvaldes.dev/stream",
       Linkedin: "https://links.mvaldes.dev/linkedin",
       Discord: "https://discord.gg/bMrKXDPz",
+      Youtube: "https://www.youtube.com/@mvaldes",
     },
   }),
 }

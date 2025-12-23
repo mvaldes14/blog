@@ -2,8 +2,8 @@
 title: Are you stuck?
 date: 2025-02-27
 draft: false
-tags: 
-- life
+tags:
+  - random
 ---
 You’ve probably heard people in the IT space talk about being "burned out" and what leads to it. But today, I want to share something different—something that someone else out there might be feeling too: being "stuck" and feeling "directionless" at work.
 

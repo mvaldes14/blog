@@ -1,7 +1,6 @@
 ---
 title: Look ma I'm a Streamer
 date: 2024-01-18
-description: Look Ma' I'm a streamer now
 draft: false 
 tags: 
 - random

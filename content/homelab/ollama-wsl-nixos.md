@@ -1,7 +1,6 @@
 ---
 title: Ollama in WSL + NixOS
 date: 2024-10-08
-description: Quick way to get your own LLM locally
 draft: false
 tags: 
 - wsl

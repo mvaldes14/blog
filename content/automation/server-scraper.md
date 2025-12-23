@@ -1,13 +1,12 @@
 ---
 title: Ruby Server Scraper
 date: 2022-04-17
-description: Automating site scraping because engineers are lazy right?!.
 draft: false
 tags: 
 - automation
 ---
 
-As shared in a previous [post](https://blog.mvaldes.dev/homelab/selfhosted-2022), been looking into expanding my existing homelab and the number of sites that sell used hardware is very limited and having to depend on sites like craiglist, Facebook marketplace was simply not going to cut it, cause first of all I no longer use my Facebook account and craiglist has always been fishy in my opinion...also have had some crappy experiences in there so no thank you. I had 2 options, either find something in reddit's communities or keep an eye on a local store here in Minnesota that basically sells used hardware at very decent prices, shout-out to FGTW for having such sweet components and close to home - https://www.freegeektwincities.org/
+As shared in a previous [post](https://blog.mvaldes.dev/selfhosted-2022.html), been looking into expanding my existing homelab and the number of sites that sell used hardware is very limited and having to depend on sites like craiglist, Facebook marketplace was simply not going to cut it, cause first of all I no longer use my Facebook account and craiglist has always been fishy in my opinion...also have had some crappy experiences in there so no thank you. I had 2 options, either find something in reddit's communities or keep an eye on a local store here in Minnesota that basically sells used hardware at very decent prices, shout-out to FGTW for having such sweet components and close to home - https://www.freegeektwincities.org/
 
 So instead of me visiting the site every day, figured I could automate the entire process, cause that's what software engineering is all about!.
 

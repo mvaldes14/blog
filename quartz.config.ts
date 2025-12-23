@@ -85,7 +85,6 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
-      // Plugin.CNAME({ name: "blog.mvaldes.dev" }),
     ],
   },
 }

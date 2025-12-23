@@ -1,7 +1,6 @@
 ---
 title: The Steam Deck is awesome
 date: 2024-01-12
-description: I'm addicted to metroidvania games and my life is hell.
 draft: false 
 tags: 
 - random
@@ -16,7 +15,7 @@ Well the device was perfectly fine, protected by its case, and it had that new p
 
 The first 30 minutes were enough for me to get addicted to Hollow Knight, how could I not play this game when it came out... probably bought it 3 years ago, and it looked cool but never game myself the chance to play anything else but stupid DOTA. How wrong was I... it's such a magnificent game, at this point I already completed the game at 102%, and I still have 10% more to go to really really finish it.
 
-{%meme src="https://vgkami.com/wp-content/uploads/2022/04/hollow-knight-memes.jpg" /%}
+<img src="https://vgkami.com/wp-content/uploads/2022/04/hollow-knight-memes.jpg"/>
 
 With that in mind, figured maybe lets try more games?. Stupid me ended up downloading 5 more and they all work beautifully, never before have I felt such joy playing games and the fact that I can do it on the go or anywhere really is so refreshing.
 

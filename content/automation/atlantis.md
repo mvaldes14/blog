@@ -1,7 +1,6 @@
 ---
 title: Terraform Automation with Atlantis
 date: 2023-10-04
-description: Want to look cool and deploy your infra like an enterprise would? Get some Atlantis into your homelab.
 draft: false
 tags: 
 - automation

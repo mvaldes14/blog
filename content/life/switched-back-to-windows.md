@@ -1,7 +1,6 @@
 ---
 title: Windows is decent again?
 date: 2020-07-19
-description: Windows can do what now?. Honestly shocked on what you can do in a windows workstation now.
 draft: false 
 tags: 
 - random
@@ -15,7 +14,7 @@ I did miss the one windows perk which was playing AAA games, at the time I was s
 
 So I downloaded a copy of windows and created the image on a boot drive and so it began… wiping the drives and installing Windows once again, it took almost 30 minutes including the number of restarts it has to do to make sure everything is done properly and setting up the accounts and whatever else it does, finally it was complete and I was presented with a fresh copy of Windows, it still had a bunch of bloatware I did not need and I still feel it shouldn’t even be installed on the system to begin with but that’s for another day. Now I do have to add, I kept using the Windows at work and with new additions like WSL the switch was even more tempting cause I could use it without being blocked by company policies in the work equipment.
 
-One of the great perks of Linux distributions is the package managers (yum, apt, pacman, etc) which is something that I always wished windows would have so I could [automate everything like I did before](https://blog.mvaldes.dev/automation/ansible-boostrap). So googling around I found that windows is already working on it’s own [package manager](https://docs.microsoft.com/en-us/windows/package-manager/) which was awesome but for the meantime I also found chocolatey so I quickly looked up my most common apps and installed them incredibly easy, no need to download a bunch of installers or to get them from dubious sites, again in a matter of minutes my system was ready.
+One of the great perks of Linux distributions is the package managers (yum, apt, pacman, etc) which is something that I always wished windows would have so I could [automate everything like I did before](https://blog.mvaldes.dev/posts/ansible-boostrap). So googling around I found that windows is already working on it’s own [package manager](https://docs.microsoft.com/en-us/windows/package-manager/) which was awesome but for the meantime I also found chocolatey so I quickly looked up my most common apps and installed them incredibly easy, no need to download a bunch of installers or to get them from dubious sites, again in a matter of minutes my system was ready.
 
 An extra item I did not expect was that the Windows Terminal was **pretty decent**, I mean it's not going to compete against Konsole in KDE but for being their first try it's damn good, you can blur the background, change the colorscheme, use custom fonts and it has tabs that take you directly into a WSL distro, once again, very impressed. I have uploaded my personal configuration file to my [dotfiles](https://github.com/mvaldes14/dotfiles/) in case you are curious.
 

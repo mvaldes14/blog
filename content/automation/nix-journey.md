@@ -1,7 +1,6 @@
 ---
 title: I Love/Hate Nix
 date: 2024-05-06
-description: I use nix (btw)
 draft: false
 tags: 
 - nix 

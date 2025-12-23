@@ -1,13 +1,12 @@
 ---
 title: My SelfHosted Journey in [2022]
 date: 2022-03-24
-description: What I'm currently running in the homelab 2022 edition
 draft: false
 tags: 
 - homelab
 ---
 
-Back in 2020 I started the beautiful journey of running services in my gaming rig, a Dell SFF computer and a Raspberry Pi 3b and due to the pandemic I had plenty of time at home to start playing with tech that I described back in this [post](https://blog.mvaldes.dev/archive/docker-home-setup.html) but much has changed since then, so I figured I would share where that journey has taken me.
+Back in 2020 I started the beautiful journey of running services in my gaming rig, a Dell SFF computer and a Raspberry Pi 3b and due to the pandemic I had plenty of time at home to start playing with tech that I described back in this [post](https://blog.mvaldes.dev/docker-home-setup.html) but much has changed since then, so I figured I would share where that journey has taken me.
 
 At the begging I was only fooling around with services or platforms that I used at work cause I wanted to learn more but at some point the entire focus shifted when I started listening to the self-hosted podcast as well as visiting the r/self-hosted subreddit, boy was I amazed by the amount of things you could host in your own network and the amount of things I could in theory replace that I was paying for… looking at you google drive/photos.
 
