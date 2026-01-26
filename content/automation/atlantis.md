@@ -2,7 +2,7 @@
 title: Terraform Automation with Atlantis
 date: 2023-10-04
 draft: false
-tags: 
+tags:
 - automation
 - iac
 ---
@@ -48,7 +48,7 @@ atlantis:
 
 > Having a good repo structure is crucial to having a good workflow experience, otherwise you are not going to have a good time.
 
-With everything running now you need to configure your repo with a proper `atlantis.yml`, so it knows where to go and what to read. In my case I have separate state and manifests depending on which "app" they belong to. 
+With everything running now you need to configure your repo with a proper `atlantis.yml`, so it knows where to go and what to read. In my case I have separate state and manifests depending on which "app" they belong to.
 You can also split this by environments, providers or vendors. Again the key is to have a good structure, so you can manage it.
 
 Here's my [repository](https://github.com/mvaldes14/terraform) if you want to see the layout.
@@ -66,7 +66,7 @@ projects:
       when_modified:
       - "*.tf" # Which files types will trigger a plan,
         # Useful to prevent executions on README or makefiles.
-  - name: aws  
+  - name: aws
     workspace: aws
     dir: apps/aws
     autoplan:
@@ -87,7 +87,7 @@ You can expand on the plan details to see what resources will be created. And if
 
 If everything was done right, your PR will be merged and your infra should be ready for you.
 
-## Conclusion 
+## Conclusion
 
 It is very important to design your IaC pipeline "correctly" and how you will manage it. So put these in a balance and pick your poison.
 

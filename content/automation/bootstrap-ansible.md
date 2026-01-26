@@ -2,7 +2,7 @@
 title: Bootstrap your system with ansible
 date: 2019-08-20
 draft: false
-tags: 
+tags:
 - automation
 - ansible
 ---

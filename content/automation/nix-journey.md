@@ -2,8 +2,8 @@
 title: I Love/Hate Nix
 date: 2024-05-06
 draft: false
-tags: 
-- nix 
+tags:
+- nix
 - wsl
 ---
 
@@ -68,13 +68,13 @@ Let's begin with an example of a shell that will have something like psql that i
 > The file may look complex but in reality it's just inputs and outputs declared.
 
 With the file created now you can do `nix develop`. Nix will find your flake file and use it to build a shell environment.
-You can now do `psql` and use it to connect to a database. 
+You can now do `psql` and use it to connect to a database.
 
 __This is the power of Nix__, having the option to run certain packages on certain projects where a `flake.nix` file resides. Now you can make that array bigger and start including whatever your project might need and do remember that the __nixpkgs repository has more packages/apps than the AUR which is considered to be massive.__
 
 ### Automate your shells
 If you are now somewhat sold, what if I told ya you won't need to run nix develop and as soon as you change directory into something with a flake everything will be prepared and enabled for you to use?.
-That where `direnv` comes in, it's another project/tool that basically allows you to automagically load your environments as soon as it sees a `flake.nix` and a `.envrc` file. 
+That where `direnv` comes in, it's another project/tool that basically allows you to automagically load your environments as soon as it sees a `flake.nix` and a `.envrc` file.
 
 If you want to set it up please follow the [instructions](https://github.com/nix-community/nix-direnv)
 

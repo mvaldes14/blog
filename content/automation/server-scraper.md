@@ -2,7 +2,7 @@
 title: Ruby Server Scraper
 date: 2022-04-17
 draft: false
-tags: 
+tags:
 - automation
 ---
 

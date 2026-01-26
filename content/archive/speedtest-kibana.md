@@ -2,10 +2,10 @@
 title: Monitor your ISP Speed in Kibana
 date: 2020-08-30
 description: A fun way to see if your ISP is really giving you what you pay for.
-draft: false 
-tags: 
- - elastic 
- - homelab 
+draft: false
+tags:
+ - elastic
+ - homelab
 ---
 
 With the working from home situation my wife has been complaining that the internet is somewhat slower which makes sense since we now have more devices on and streaming content... I have watched Frozen 1 and 2 over 30 times now..... but figured I should double check to see the actual numbers, so I consulted the good ol' site [speedtest.net](http://speedtest.net) and ran couple tests and noticed that I am indeed getting sometimes half of what I'm paying for and some other times I do get more than I should. As FYI I'm paying $45 for 100 mbps which is pretty nice in my opinion.

@@ -2,7 +2,7 @@
 title: Cloudflare Tunnels are the bomb
 date: 2023-02-25
 draft: false
-tags: 
+tags:
 - homelab
 - k8s
 ---

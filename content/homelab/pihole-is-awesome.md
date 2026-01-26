@@ -2,7 +2,7 @@
 title: Pihole is pure awesomeness
 date: 2020-08-26
 draft: false
-tags: 
+tags:
 - homelab
 ---
 

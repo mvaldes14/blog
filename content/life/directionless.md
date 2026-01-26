@@ -9,7 +9,7 @@ You’ve probably heard people in the IT space talk about being "burned out" and
 
 But let me rant for a bit.
 
-Have you ever felt like you're not learning or moving forward in your position?  
+Have you ever felt like you're not learning or moving forward in your position?
 Wise people would tell you it's a sign to switch teams or companies, which is probably the right move—unless you're under contract or in some weird predicament. So maybe you stick around, and that’s totally fine.
 
 In my case, I feel stuck doing the same repetitive tasks (most of which are automated at this point), all within the same realm of five tools and patterns. It’s like déjà vu every day. I can’t even remember the last time I was excited to try something new at work. As someone who gets bored easily and constantly wants to learn and improve, this has been killing me. For the past ten months, I’ve felt completely stuck—without direction or motivation.
@@ -22,7 +22,7 @@ Rant over. So what’s next?
 
 Do what the wise people suggest: find a new place where I can learn, be challenged, and actually contribute. That’s hard to do in big corporate jobs, where you're just a cog in the machine. I also need to find a mentor—someone who can help me move up in my career and prevent me from feeling like this again. I haven’t had a mentor in years. Likewise, I’d love to become that person for someone else—someone just starting out and needing that push to accomplish their goals.
 
-If you ever feel this way, don’t wait months or years to push yourself toward something new.  
+If you ever feel this way, don’t wait months or years to push yourself toward something new.
 We only get one life, and it goes by fast—so enjoy it and do something that makes you happy.
 
 Adios

@@ -2,7 +2,7 @@
 title: Ollama in WSL + NixOS
 date: 2024-10-08
 draft: false
-tags: 
+tags:
 - wsl
 - nix
 ---

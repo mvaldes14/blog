@@ -2,17 +2,17 @@
 title: Neovim in 2023
 date: 2023-09-19
 draft: false
-tags: 
+tags:
 - neovim
 ---
 
-I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of VScode. 
+I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of VScode.
 Now I'm one with Lua/Neovim and everyone else using the bloated editor is wrong (hot take 🔥).
 
 ### Here's why
 
 1. It's way way way faster than Vscode at loading things, resource wise it's just fantastic, don't have to wait couple seconds for a project to load up and my system to start choking cause of course Electron wants 20 out of the 32GB available.
-And this is not caused by something like running outdated hardware, top of the line 2019 MacbookPro can't handle a big project with 20-30 files. 
+And this is not caused by something like running outdated hardware, top of the line 2019 MacbookPro can't handle a big project with 20-30 files.
 
 2. Can be customized to whatever you mind can think of. Need your editor to do something like idk maybe toggle or fill out a `[ ]` in your todo files where you track everything? Write a quick 15 line function in lua.
 Need to be able to run something with the code you are writing? There's a probably a plugin for that and **IF NOT** you can write it.

@@ -1,8 +1,8 @@
 ---
-title: Tailscale is pretty cool 
+title: Tailscale is pretty cool
 date: 2024-07-21
 draft: false
-tags: 
+tags:
 - homelab
 ---
 
@@ -20,7 +20,7 @@ Twenty minutes later I had the exact same setup on my 3 devices, everything was 
 
 Now since Tailscale is a paid product of course it has some extra features that allow you to expose routes, a service/CLI that gives you specifics on traffic and clients, split tunneling and user management, etc. **Don't want this to become an AD for them (not paid or sponsored in any way).**
 
-So to conclude, it is a great product, and it uses the same technology deep down (wireguard). 
+So to conclude, it is a great product, and it uses the same technology deep down (wireguard).
  It keeps getting updates and features that most of us can leverage without paying a dime for your homelab or small network. The Android App just got a new UI which is beautiful and easy to automate with something like Tasker, having the VPN turn on as soon as I leave my Wi-Fi is just magic.
 
 Would highly recommend giving it a shot, I believe there's a fork on it that is FOSS, so maybe that's more your cup of tea - https://github.com/juanfont/headscale.

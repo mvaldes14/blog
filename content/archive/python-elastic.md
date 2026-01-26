@@ -2,10 +2,10 @@
 title: Twitter Sentiment Analysis with Python & Elasticsearch
 date: 2019-05-13
 description: Using Elasticsearch to do Sentiment Analysis
-draft: false 
-tags: 
+draft: false
+tags:
 - automation
-- elastic 
+- elastic
 ---
 
 Elasticsearch has become part of my daily routine so the more I use it, the more I think of ways of using it outside work so came up with the idea of why not creating my own ingestion with sentiment analysis so that data can be processed and tagged before being indexed into Elastic?.

@@ -2,14 +2,14 @@
 title: Self Hosted in 2024
 date:  2024-03-25
 draft: false
-tags: 
+tags:
 - homelab
 ---
 
 It's been 4 years since the self-hosted adventure began and it gets bigger and weirder as seasons come and go. What started with a single Dell refurbished machine (which i still use) to run certain services back in [2020](https://mvaldes.dev/blog/docker-home-setup/) has now evolved into an actual mini rack with some serious network devices and more machines. So lets see what changed sine my last post back in [2022](https://mvaldes.dev/blog/selfhosted-2022)
 
 ## An Actual Rack Arrived...
-Bought a home in the crazy economy.... it was a wild ride but we are pretty happy with what we got, which meant that I no longer had to keep everything in the closet, this was a big change at a personal level but also on my self-hosting cause that meant i could actually get a rack to put everything that I owned which back then was still 1 Dell Machine SFF, 1 Dell 3080 and my Raspberry Pi. Also by having more space meant i needed to think seriously how I wanted my networking to look like. 
+Bought a home in the crazy economy.... it was a wild ride but we are pretty happy with what we got, which meant that I no longer had to keep everything in the closet, this was a big change at a personal level but also on my self-hosting cause that meant i could actually get a rack to put everything that I owned which back then was still 1 Dell Machine SFF, 1 Dell 3080 and my Raspberry Pi. Also by having more space meant i needed to think seriously how I wanted my networking to look like.
 
 Originally I thought a big Access Point connected to the router was going to be sufficient but having 3 levels and 20+ devices it wasn't going to perform or scale well. So i went all in and acquired couple Unifi devices:
 
@@ -26,7 +26,7 @@ This is how it looked it early on
 ## The servers had babies
 With the networking ready now I just needed to add more juice to the whole setup. A local Youtuber who makes a ton of awesome videos about self-hosting [TechoTim](https://techno-tim.github.io/) was getting rid of an Intel NUC and I was lucky enough to be the first one to respond so I got a free powerful mini PC, many appreciations to him for being so kind.
 
-Next step was to solve a very simple problem, none of my machines were powerful enough to do video decode/encode (besides my main rig with a 3080) but that one isn't on 24/7 so the next goal was to find a small machine that had enough processing power to allow me to encode media files on the fly. After much reading the solution was pretty simple, find a SFF (small form factor) computer that had an Intel processor 7th Gen or above. So  after checking my favorite subreddits (r/hardwareswap & r/homelabsales) someone was selling an HP Gen4 machine with an intel 8th gen and 32GB RAM. 
+Next step was to solve a very simple problem, none of my machines were powerful enough to do video decode/encode (besides my main rig with a 3080) but that one isn't on 24/7 so the next goal was to find a small machine that had enough processing power to allow me to encode media files on the fly. After much reading the solution was pretty simple, find a SFF (small form factor) computer that had an Intel processor 7th Gen or above. So  after checking my favorite subreddits (r/hardwareswap & r/homelabsales) someone was selling an HP Gen4 machine with an intel 8th gen and 32GB RAM.
 
 The Homelab was ready. We scaled from 2 to 4 machines + raspberry. So my computing power was ready for the workloads I had in mind.
 
@@ -55,7 +55,7 @@ Also worth mentioning some stuff I'm __NO__ longer running:
 - Minio => Cloudflare R2 - Minio was good but a pain to manage so its one of those i'd rather pay for.
 - Fileflows => I no longer have to worry about formats and encodings since i can do those on the fly without constant buffering
 
-## Future 
+## Future
 In the near future I would like to improve the following:
 - My backing up strategies for the setup as well as the data, the NAS had a faulty disk sometime in 2023 and it took me awhile to recover from it.
 - Balance the workloads, some nodes run more container due to the nature of some of the services so i need to make those more resilient.

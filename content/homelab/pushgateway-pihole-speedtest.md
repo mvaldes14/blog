@@ -2,7 +2,7 @@
 title: Pihole and ISP Metrics in Prometheus
 date: 2021-01-25
 draft: false
-tags: 
+tags:
 - automation
 - homelab
 ---

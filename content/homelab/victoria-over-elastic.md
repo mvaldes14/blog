@@ -1,7 +1,7 @@
 ---
 title: Bye Elastic, Hola Victoria
 date: 2025-01-24
-draft: false 
+draft: false
 tags:
 - homelab
 - observability
@@ -9,7 +9,7 @@ tags:
 
 It is no secret that I'm a Elasticsearch aficionado, try to use it for a lot of things like storing my twitch chat messages or [visualize](https://mvaldes.dev/archive/speedtest-kibana) data (you can do a lookup for elastic on this blog and find 3-4 posts about it), hell I even get paid to manage couple clusters at work and it's been pretty close and deep in my heart, so much that when I stood up my homelab cluster and wanted to monitor the workloads (docker and now Kubernetes).I went all in with metricbeat/filebeat for the collection of pretty much everything. As this progressed and with upgrades and restarts to update packages in the underlying infrastructure it became a bit of a pain that sometimes some nodes would lock up and prevent me from starting the service causing delays and overall problems and headaches I get paid to fix, but in this case since its my own homelab I didn't want to endure on my free time right!??!?!.
 
-Do have to point out this whole situation is most probably caused by something wrong on my Ansible scripts to do those maintenance tasks but it is a known fact that maintaining an Elasticsearch cluster isn't exactly easy. 
+Do have to point out this whole situation is most probably caused by something wrong on my Ansible scripts to do those maintenance tasks but it is a known fact that maintaining an Elasticsearch cluster isn't exactly easy.
 
 > [!tip]
 > If you look at Linkedin or similar platform you will find dedicated positions just to maintain/upgrade and run Elastic. So if you like it and are good at it you may be able to find a good paying job!
@@ -24,7 +24,7 @@ After some back to back issues and alerts I grew tired of it and started looking
 - [ ] Easy way to setup data retention and rollout
 
 After looking and testing some tools like Grafana [[Loki]] which covers most of the boxes, with some caveats which are mostly me being extra special and dense:
-- I'm not super fond of the PromQL language 
+- I'm not super fond of the PromQL language
 - Requires some config options for backend storage
 - Promtail only does logs and ideally I want one agent doing both metrics and logs down the road
 

@@ -2,7 +2,7 @@
 title: Chef Tips and Tricks
 date: 2022-12-10
 draft: false
-tags: 
+tags:
 - automation
 - cm
 ---

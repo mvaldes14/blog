@@ -91,11 +91,11 @@ type response struct { // Trimmed down version of the response with just needed 
                             ItemName     string `json:"item_Name"`
                             Description  string `json:"description"`
                         }
-                    } 
+                    }
                 }
-            } 
-        } 
-    } 
+            }
+        }
+    }
 }
 ...
 
@@ -118,7 +118,7 @@ req, err := http.Get(url) // Send request
 	defer req.Body.Close()
 ```
 
-Once we have our response in a Golang struct we can then start the madness and iterate over it, since the API returns a pretty extensive object with a lot of nested lists, several loops were required to get to the information we are after. 
+Once we have our response in a Golang struct we can then start the madness and iterate over it, since the API returns a pretty extensive object with a lot of nested lists, several loops were required to get to the information we are after.
 I'm sure there are more efficient and probably better ways to achieve this, but my primitive brain just went with something simple.
 
 ```go
@@ -237,8 +237,8 @@ metadata:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: meal-notifier 
-  namespace: cronjobs 
+  name: meal-notifier
+  namespace: cronjobs
 spec:
   schedule: "0 7 * * 1-5"
   jobTemplate:
@@ -270,11 +270,11 @@ Cronbjob Execution.
 # Conclusion
 
 Learn by doing is the way to go!. And this was my first "real" project using Go so building something so simple took me couple hours just to understand how Go manages things and what methods were the ones I needed to use.
-I'm quite happy with how it turned out, and it gave me the fuel needed to trying more things with the language. 
+I'm quite happy with how it turned out, and it gave me the fuel needed to trying more things with the language.
 
 So now I'm waiting for the next "problem" to present itself, so I can smack it with some Go!.
 
-Hope you liked it. 
-See ya on the next one. 
+Hope you liked it.
+See ya on the next one.
 
 Adios 👋

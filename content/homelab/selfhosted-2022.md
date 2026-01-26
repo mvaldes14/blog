@@ -2,7 +2,7 @@
 title: My SelfHosted Journey in [2022]
 date: 2022-03-24
 draft: false
-tags: 
+tags:
 - homelab
 ---
 

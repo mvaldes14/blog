@@ -3,7 +3,7 @@ title: Python Flask in a container
 date: 2018-12-07
 description: Devcontainers in a nutshell
 draft: false
-tags: 
+tags:
 - container
 ---
 
