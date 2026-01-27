@@ -4,7 +4,7 @@ date: 2026-01-26
 tags:
   - blog
   - personal
-draft: true
+draft: false
 ---
 ## One App to Rule them all
 It's been almost a 2 years since I moved everything into a single little application you may have heard about, called Obsidian. The initial migration was just to move all of my wiki entries on tech stuff I'm currently learning or using like my Kubernetes/Docker/Linux notes as well as entries related to concepts like Event Driven Design, TDD or programming languages I'm learning like Go/TS/Lua/Rust.
