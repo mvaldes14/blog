@@ -3,7 +3,7 @@ name: Hello, Hola!
 ---
 **Hello, Hola!**
 
-This is more than just a blog, it’s a workshop for the curious and a log of my journey through the ever-evolving world of software engineering. I believe in the power of automation, the elegance of clean code, and the satisfaction of owning your own data. 
+This is more than just a blog, it’s a workshop for the curious and a log of my journey through the ever-evolving world of software engineering. I believe in the power of automation, the elegance of clean code, and the satisfaction of owning your own data.
 
 Join me as I explore the latest in DevOps tooling, share what I’ve learned from my self-hosting projects, and dive into the architecture behind the software we use every day. Let’s grow our skills together.
 

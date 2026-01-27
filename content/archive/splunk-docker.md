@@ -3,7 +3,7 @@ title: Splunk Quickstart Guide
 date: 2020-12-16
 description: Not everything is Elasticsearch in this life.
 draft: false
-tags: 
+tags:
 - container
 - observability
 ---

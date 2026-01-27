@@ -1,7 +1,7 @@
 ---
 title: n8n is pure awesomeness
 date: 2025-12-23
-draft: false 
+draft: false
 tags:
   - automation
 ---
@@ -11,14 +11,14 @@ One of the **big** benefits of having a Homelab and plenty of services running l
 
 Now, whenever I do automation at home, 90% of the times it is a very repetitive pattern:
 1. Start putting together a bunch of bash scripts that would call something to retrieve some data
-2. Format or parse the data. Enrich as needed. 
+2. Format or parse the data. Enrich as needed.
 3. Send a payload elsewhere and eventually achieve the automation’s objective.
 4. Profit
 
-That approach worked for a couple of years, especially for notifications whenever something went down in the Homelab that needed my attention and things like Grafana couldn't handle already, so with more services running locally and more integrations running I discovered the no-code automation tools that made things so simple that even someone that isn't a “tech bro” would be able to use them. 
-On top of that, the hype with AI made automation even more desirable since it could also be expanded to develop these so-called “AI Agents,” which to me are basically (Hot Take of the week 🔥) **big cronjobs that either run on a schedule or react to an event, following an event-driven architecture design, but doesn’t take off the fact they pretty much just do the same methodology of the automation pattern mentioned above.**  
+That approach worked for a couple of years, especially for notifications whenever something went down in the Homelab that needed my attention and things like Grafana couldn't handle already, so with more services running locally and more integrations running I discovered the no-code automation tools that made things so simple that even someone that isn't a “tech bro” would be able to use them.
+On top of that, the hype with AI made automation even more desirable since it could also be expanded to develop these so-called “AI Agents,” which to me are basically (Hot Take of the week 🔥) **big cronjobs that either run on a schedule or react to an event, following an event-driven architecture design, but doesn’t take off the fact they pretty much just do the same methodology of the automation pattern mentioned above.**
 
-So, enough history, what am I using and what am I doing with it? – I’m running a local version of [n8n](https://n8n.io/) which again you can get started using their free tier but since I have the hardware I always try to run things myself to keep my data under control we self host it. 
+So, enough history, what am I using and what am I doing with it? – I’m running a local version of [n8n](https://n8n.io/) which again you can get started using their free tier but since I have the hardware I always try to run things myself to keep my data under control we self host it.
 
 Now, what am I using it for? – Don’t have an answer per se for that since it can pretty much connect to thousands of services so I’m going to give you some example workflows.
 ️

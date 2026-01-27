@@ -1,8 +1,8 @@
 ---
 title: Windows is decent again?
 date: 2020-07-19
-draft: false 
-tags: 
+draft: false
+tags:
 - random
 ---
 

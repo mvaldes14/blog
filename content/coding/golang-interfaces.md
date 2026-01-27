@@ -4,18 +4,12 @@ date: 2024-12-18
 draft: false
 tags:
   - coding
-  - go 
+  - go
 ---
 
-<<<<<<<< HEAD:content/coding/golang-interfaces.md
 Recently been doing a lot of Golang for my twitch bot (I stream btw, rarely but I do). So while setting up the web-server I wanted to customize some of the functionality so each request checks the headers and respond differently based on said headers. So i went down the rabbit hole into Middleware and based on a book I'm reading called "Let's Go" by Alex Edwards you can pretty much "overload" the default methods as long as it satisfies the interface.
 ### So WTF is an interface?
-It's basically a definition of something that contains functions/variables/parameters and those must exist and return/do what the interface demands. 
-========
-Recently been doing a lot of [[go#Interfaces]] for my twitch bot (I stream btw, rarely but I do). So while setting up the web-server I wanted to customize some of the functionality so each request checks the headers and respond differently based on said headers. So i went down the rabbit hole into Middleware and based on a book I'm reading called "Let's Go" by Alex Edwards you can pretty much "overload" the default methods as long as it satisfies the interface.
-### So wtf is an interface?
 It's basically a definition of something that contains functions/variables/parameters and those must exist and return/do what the interface demands.
->>>>>>>> eb1dfa1 (new post):content/coding/golang-interfaces-easy.md
 - The definition is: A contract that has to be followed.
 - For those of us who are 5: Either it does what the interface says or it won't work and it doesn't care how you do it.
 

@@ -1,8 +1,8 @@
 ---
 title: Look ma I'm a Streamer
 date: 2024-01-18
-draft: false 
-tags: 
+draft: false
+tags:
 - random
 ---
 

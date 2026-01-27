@@ -10,14 +10,17 @@ tasks:
       - rm -rf public
   publish:
     desc: "Commit and push changes"
+    vars:
+      DATE:
+        sh: date +%Y-%m-%d
     cmds:
       - git add .
-      - git commit -m "new post"
+      - 'git commit -m "docs: update blog content {{.DATE}}"'
       - git push
   sync:
     desc: "Sync blog content from Obsidian"
     vars:
       VAULT_PATH:
-        sh: if uname -s | grep -i darwin > /dev/null; then echo "~/Obsidian/wiki/03-Blog/"; else echo "/mnt/c/Users/migue/Documents/wiki/03-Blog"; fi
+        sh: if uname -s | grep -i darwin > /dev/null; then echo "~/Obsidian/wiki/03-Blog/"; else echo "/mnt/c/Users/migue/Documents/wiki/03-Blog/"; fi
     cmds:
       - cmd: rsync -r {{.VAULT_PATH}} content

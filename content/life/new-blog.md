@@ -1,8 +1,8 @@
 ---
 title: Blog 2.0
 date: 2019-01-21
-draft: false 
-tags: 
+draft: false
+tags:
 - random
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Blog 3.0
 date: 2023-02-09
-draft: false 
-tags: 
+draft: false
+tags:
 - random
 ---
 

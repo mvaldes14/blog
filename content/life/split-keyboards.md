@@ -1,8 +1,8 @@
 ---
 title:  Split Keyboards are fun
 date: 2024-09-24
-draft: false 
-tags: 
+draft: false
+tags:
 - random
 ---
 It's been 3 months or so now from when my journey into the split keyboards started and I blame my old cheap self and tech twitter who once again managed to "influence" me into buying things I probably should've acquired a long time ago.
@@ -25,7 +25,7 @@ Another big time consumer item I wasn't truly expecting was finding or setting u
 
 <img src="https://s3.mvaldes.dev/blog/moonlander-config.png" alt="Config" />
 
-Overall it took me 1.5 months to get back into my average words per minute (90-105) with minimal errors. 
+Overall it took me 1.5 months to get back into my average words per minute (90-105) with minimal errors.
 Also, those long documentation or blog writing sessions no longer cause problems.
 
 <img src="https://s3.mvaldes.dev/blog/moonlander-monkeytype.png" alt="Monkeytype" />
