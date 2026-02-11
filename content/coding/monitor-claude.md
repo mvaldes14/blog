@@ -6,10 +6,7 @@ tags:
 draft: false
 date: 2026-02-11
 ---
-Lately I've been using Anthropic Claude via their official CLI and Claude Code a lot to manage and code—basically running my life as the **AI
-Overlords** intended. One interesting (or annoying) feature is how quickly tokens get consumed, so I wanted to track my consumption patterns
-and understand my historical AI usage. While browsing Reddit posts on observability, found out that the official `claude` CLI actually
-exposes telemetry. Of course, I had to hook it up to my local SigNoz instance to see what it produces and visualize it.
+Lately I've been using Anthropic Claude via their official CLI Claude Code a lot to manage and code basically everything in my life as the **AI Overlords** intended. One interesting (or annoying) feature is how quickly tokens get consumed, so I wanted to track my consumption patterns and understand my historical AI usage. While browsing Reddit posts on observability, found out that the official `claude` CLI actually exposes telemetry. Of course, I had to hook it up to my local SigNoz instance to see what it produces and visualize it.
 # Setup
 To get this done it's pretty straightforward, enable or set some variables per session or in your favorite shell and done!. - see actual steps [here](https://code.claude.com/docs/en/monitoring-usage)
 My variable setup looks like this.
