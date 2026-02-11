@@ -3,8 +3,7 @@ title: I Love/Hate Nix
 date: 2024-05-06
 draft: false
 tags:
-- nix
-- wsl
+  - nix
 ---
 
 I've always tried to automate my working environments in either a personal or professional setup. So years ago, I created a repository for my dotfiles which has been curated over the years with my custom applications, aliases or anything that I found useful or repetitive. All of that worked out just fine, at some point I even went all in into actual automation by using Ansible to set up my multiple machines, which also has its own repository if you are curious.

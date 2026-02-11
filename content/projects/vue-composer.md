@@ -3,7 +3,7 @@ title: Docker-compose with vue
 date: 2020-06-02
 draft: false
 tags:
-- frontend
+  - coding
 ---
 
 Due to COVID19 I finally had time to finish some of my outstanding courses, one of those was VueJs so figured i would apply it to something useful instead of doing the regular to-do apps. Which have nothing bad but they are repetitive and well, not fun to be honest.

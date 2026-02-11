@@ -3,8 +3,7 @@ title: Ollama in WSL + NixOS
 date: 2024-10-08
 draft: false
 tags:
-- wsl
-- nix
+  - nix
 ---
 
 While setting up my new computer and WSL + NixOS (btw), I needed to set up my own quick LLM to ask dumb things and integrate it within my NeoVim experience using the [Ollama Plugin](https://github.com/nomnivore/ollama.nvim).

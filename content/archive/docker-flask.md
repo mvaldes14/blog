@@ -4,7 +4,8 @@ date: 2018-12-07
 description: Devcontainers in a nutshell
 draft: false
 tags:
-- container
+  - containers
+  - coding
 ---
 
 **_Make your apps easier to deploy and carry with you_**

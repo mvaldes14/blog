@@ -3,8 +3,7 @@ title: The Steam Deck is awesome
 date: 2024-01-12
 draft: false
 tags:
-- random
-- gaming
+  - random
 ---
 
 Thanks to my dumb luck and a recent trip up to Seattle (The best state to live in according to people I know), I ended up with $300 worth of Steam Credit and amazingly enough is when the Steam Deck OLED decided to drop so by me injecting couple hundred dollars more I ended up with a shiny new Steam Deck OLED 256 GB.

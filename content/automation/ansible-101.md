@@ -3,8 +3,8 @@ title: Ansible 101
 date: 2019-01-18
 draft: false
 tags:
-- automation
-- ansible
+  - automation
+  - configuration-management
 ---
 
 ## Overview

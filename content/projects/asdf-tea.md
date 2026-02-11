@@ -3,7 +3,7 @@ title: Introducing asdf-tea
 date: 2023-07-24
 draft: false
 tags:
-- blog
+  - coding
 ---
 
 I've been using asdf a lot lately to manage all of my languages versions and random packages that simply do not have an easy way to install

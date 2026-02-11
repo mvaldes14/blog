@@ -2,7 +2,8 @@
 title: How I Use Obsidian for Everything (Almost)
 date: 2026-01-26
 tags:
-  - blog
+  - ai
+  - random
 draft: false
 ---
 ## One App to Rule them all

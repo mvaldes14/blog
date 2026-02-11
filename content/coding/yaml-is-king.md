@@ -3,9 +3,8 @@ title: Yaml is King change my mind, please!
 date: 2025-02-02
 draft: false
 tags:
-- coding
-- k8s
-- iac
+  - k8s
+  - random
 ---
 
 Got a short one for you this week.

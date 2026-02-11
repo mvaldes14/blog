@@ -3,8 +3,8 @@ title: Chef Tips and Tricks
 date: 2022-12-10
 draft: false
 tags:
-- automation
-- cm
+  - automation
+  - configuration-management
 ---
 
 Lately I've been pretty deep into the Chef weeds and the more I end up working on it, the more I keep finding these little tips and tricks on how to get something done, some of these come from Seniors that passed them on to me and some of them I either end up finding online or figuring them out so would like to share them in case someone finds them useful.
