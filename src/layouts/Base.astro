@@ -1,0 +1,77 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import type { Lang } from '@/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  // Full URL path of the translation (e.g. /es/posts/foo), if it exists.
+  translationHref?: string;
+  // Optional OG image override
+  ogImage?: string;
+}
+
+const { title, description, lang, translationHref, ogImage } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageUrl = ogImage ?? new URL('/og-default.png', Astro.site).toString();
+---
+
+<!doctype html>
+<html lang={lang === 'es' ? 'es-ES' : 'en-US'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- hreflang alternates -->
+    {translationHref && (
+      <>
+        <link
+          rel="alternate"
+          hreflang={lang === 'en' ? 'es' : 'en'}
+          href={new URL(translationHref, Astro.site).toString()}
+        />
+        <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+        <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+      </>
+    )}
+
+    <!-- Per-language RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Miguel Valdes — English" href="/en/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Miguel Valdes — Español" href="/es/rss.xml" />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header lang={lang} translationHref={translationHref} />
+    <slot />
+    <Footer lang={lang} />
+  </body>
+</html>

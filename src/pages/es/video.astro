@@ -1,0 +1,52 @@
+---
+import Base from '@/layouts/Base.astro';
+
+const lang = 'es' as const;
+
+// Add videos here as { title, description, href, date }
+const videos: { title: string; description?: string; href: string; date: string }[] = [
+  {
+    title: "Empezando con NeoVim | Miguel Valdes",
+    href: "https://www.youtube.com/watch?v=9O_KsVS5UYI",
+    date: "2024-01-31",
+  },
+];
+
+function ytThumb(href: string) {
+  const id = new URL(href).searchParams.get('v');
+  return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+}
+---
+
+<Base
+  title="Video — Miguel Valdes"
+  description="Videos sobre observabilidad, ingeniería de plataformas, homelab y más."
+  lang={lang}
+>
+  <article class="prose">
+    <h1>Video</h1>
+    <p>
+      Screencasts, walkthroughs y sesiones grabadas. Canal completo en
+      <a href="https://www.youtube.com/@mvaldes" target="_blank" rel="noopener">YouTube</a>.
+    </p>
+
+    {videos.length === 0 ? (
+      <p class="placeholder-note">Nada por aquí todavía — vuelve pronto.</p>
+    ) : (
+      <ul class="video-list">
+        {videos.map((video) => (
+          <li class="video-item">
+            <a href={video.href} target="_blank" rel="noopener" class="video-card">
+              <img src={ytThumb(video.href)} alt={video.title} class="video-thumb" loading="lazy" />
+              <div class="video-info">
+                <div class="video-meta">{video.date}</div>
+                <span class="video-title">{video.title}</span>
+                {video.description && <p class="video-desc">{video.description}</p>}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </article>
+</Base>

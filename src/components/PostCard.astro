@@ -1,0 +1,43 @@
+---
+import { formatDate, t, type Lang } from '@/i18n';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags: string[];
+  lang: Lang;
+  // Full href of the translation if one exists, undefined otherwise.
+  translationHref?: string;
+}
+
+const { href, title, description, pubDate, tags, lang, translationHref } = Astro.props;
+const hasTranslation = !!translationHref;
+---
+
+<article class="post">
+  <div class="post-date">
+    {formatDate(pubDate, lang)}
+    <br />
+    <span class={`lang-pill ${hasTranslation ? 'both' : lang}`}>
+      {hasTranslation ? 'EN · ES' : lang.toUpperCase()}
+    </span>
+  </div>
+  <div>
+    <h2><a href={href}>{title}</a></h2>
+    <p class="post-excerpt">{description}</p>
+    {tags.length > 0 && (
+      <div class="post-tags">
+        {tags.map((tag) => (
+          <a class="tag-chip" href={`/${lang}/tags/${tag}`}>{tag}</a>
+        ))}
+      </div>
+    )}
+    {translationHref && (
+      <a class="translation-link" href={translationHref}>
+        {t(lang, 'post.readTranslation')}
+      </a>
+    )}
+  </div>
+</article>

@@ -1,0 +1,55 @@
+---
+import Base from '@/layouts/Base.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getTranslationMap } from '@/lib/content';
+import { t } from '@/i18n';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('en', ({ data }: CollectionEntry<'en'>) => !data.draft);
+  const tags = new Set<string>();
+  for (const p of posts) for (const tag of p.data.tags) tags.add(tag);
+
+  return [...tags].map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter((p: CollectionEntry<'en'>) => p.data.tags.includes(tag))
+        .sort((a: CollectionEntry<'en'>, b: CollectionEntry<'en'>) =>
+          b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+        ),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props as { tag: string; posts: CollectionEntry<'en'>[] };
+const lang = 'en' as const;
+const translations = await getTranslationMap(lang);
+---
+
+<Base
+  title={`#${tag} — Miguel Valdes`}
+  description={`Posts tagged "${tag}"`}
+  lang={lang}
+>
+  <main class="layout" style="grid-template-columns: 1fr;">
+    <section>
+      <div class="section-title">
+        <span>#{tag}</span>
+        <span class="count">{posts.length} {t(lang, 'post.posts')}</span>
+      </div>
+      {posts.map((post) => (
+        <PostCard
+          href={`/${lang}/posts/${post.id}`}
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          tags={post.data.tags}
+          lang={lang}
+          translationHref={post.data.translationKey ? translations.get(post.data.translationKey) : undefined}
+        />
+      ))}
+    </section>
+  </main>
+</Base>

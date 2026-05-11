@@ -1,0 +1,36 @@
+---
+import Base from '@/layouts/Base.astro';
+
+const lang = 'en' as const;
+
+// Add talks here as { title, event, date, href, description }
+const talks: { title: string; event: string; date: string; href?: string; description?: string }[] = [];
+---
+
+<Base
+  title="Talks — Miguel Valdes"
+  description="Talks and presentations by Miguel Valdes on observability, platform engineering, and more."
+  lang={lang}
+>
+  <article class="prose">
+    <h1>Talks</h1>
+    <p>Presentations, conference talks, and recorded sessions. More coming soon.</p>
+
+    {talks.length === 0 ? (
+      <p class="placeholder-note">Nothing here yet — check back soon.</p>
+    ) : (
+      <ul class="talk-list">
+        {talks.map((talk) => (
+          <li class="talk-item">
+            <div class="talk-meta">{talk.date} · {talk.event}</div>
+            {talk.href
+              ? <a href={talk.href} target="_blank" rel="noopener" class="talk-title">{talk.title}</a>
+              : <span class="talk-title">{talk.title}</span>
+            }
+            {talk.description && <p class="talk-desc">{talk.description}</p>}
+          </li>
+        ))}
+      </ul>
+    )}
+  </article>
+</Base>

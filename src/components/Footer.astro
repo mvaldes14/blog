@@ -1,0 +1,22 @@
+---
+import { t, type Lang } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="bottom">
+  <div>© {year} Miguel Valdes · {t(lang, 'footer.builtWith')}</div>
+  <div class="socials">
+    <a href="https://github.com/mvaldes14" target="_blank" rel="noopener">github</a>
+    <a href="https://x.com/mr_mvaldes" target="_blank" rel="noopener">x</a>
+    <a href="https://links.mvaldes.dev/linkedin" target="_blank" rel="noopener">linkedin</a>
+    <a href="https://www.youtube.com/@mvaldes" target="_blank" rel="noopener">youtube</a>
+    <a href="/en/rss.xml">rss·en</a>
+    <a href="/es/rss.xml">rss·es</a>
+  </div>
+</footer>

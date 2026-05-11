@@ -1,16 +1,17 @@
-FROM node:22-slim AS builder
-WORKDIR /usr/src/app
-COPY package.json .
-COPY package-lock.json* .
+# syntax=docker/dockerfile:1.7
+FROM node:22-alpine AS builder
+WORKDIR /app
+
+# Install deps with lockfile-aware caching
+COPY package.json package-lock.json* ./
 RUN npm ci
 
-FROM node:22-slim AS blog
-WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/ /usr/src/app/
+# Copy source and build
 COPY . .
-RUN npx quartz build
+RUN npm run build
 
-FROM nginx:latest AS final
-COPY --from=blog /usr/src/app/public /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-CMD ["nginx", "-g", "daemon off;"]
+# ---- runtime ----
+FROM nginx:1.27-alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY k8s/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 8080

@@ -1,0 +1,95 @@
+---
+import { t, type Lang } from '@/i18n';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lang: Lang;
+  posts: (CollectionEntry<'en'> | CollectionEntry<'es'>)[];
+}
+
+const { lang, posts } = Astro.props;
+
+// Build topic counts from posts
+const tagCounts = new Map<string, number>();
+for (const post of posts) {
+  for (const tag of post.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+}
+const topTopics = [...tagCounts.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 8);
+
+const aboutCopy = {
+  en: {
+    name: 'Miguel Valdes',
+    role: 'software · automation · observability',
+    bio: "Self-taught engineer, originally studied electronics because I wanted to build an Evangelion. Father of three. Spanish is my main language, English close behind. Somehow ended up in observability and platform engineering — and I love it.",
+    bullets: [
+      'Neovim + tmux, ZSA Moonlander',
+      'Homelab: 4-node k3s, FluxCD, Authentik',
+      'Not using arch btw',
+    ],
+    videoLabel: 'YouTube · próximamente',
+    videoTitle: 'Coming soon — videos en español sobre observabilidad y homelab',
+    videoSub: 'first video shipping soon',
+  },
+  es: {
+    name: 'Miguel Valdes',
+    role: 'software · automatización · observabilidad',
+    bio: 'Ingeniero autodidacta, originalmente estudié electrónica porque quería construir un Evangelion. Padre de tres. El español es mi idioma principal, inglés muy cerca. De alguna forma terminé en observabilidad y platform engineering — y me encanta.',
+    bullets: [
+      'Neovim + tmux, ZSA Moonlander',
+      'Homelab: k3s de 4 nodos, FluxCD, Authentik',
+      'No uso arch btw',
+    ],
+    videoLabel: 'YouTube · próximamente',
+    videoTitle: 'Próximamente — videos en español sobre observabilidad y homelab',
+    videoSub: 'primer video llegando pronto',
+  },
+}[lang];
+---
+
+<aside class="reveal reveal-4">
+  <div class="side-block">
+    <div class="section-title"><span>{t(lang, 'section.about')}</span></div>
+    <div class="about-card">
+      <div class="name">{aboutCopy.name}</div>
+      <div class="role">{aboutCopy.role}</div>
+      <p>{aboutCopy.bio}</p>
+      <ul>
+        {aboutCopy.bullets.map((b) => <li>{b}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="side-block">
+    <div class="section-title"><span>{t(lang, 'section.video')}</span></div>
+    <a href="https://www.youtube.com/@mvaldes" target="_blank" rel="noopener" class="video-block">
+      <div class="video-thumb">
+        <div class="play-icon">▶</div>
+      </div>
+      <div class="video-meta">
+        <span class="label">{aboutCopy.videoLabel}</span>
+        <div class="title">{aboutCopy.videoTitle}</div>
+        <div class="sub">{aboutCopy.videoSub}</div>
+      </div>
+    </a>
+  </div>
+
+  {topTopics.length > 0 && (
+    <div class="side-block">
+      <div class="section-title"><span>{t(lang, 'section.topics')}</span></div>
+      <ul class="topics-list">
+        {topTopics.map(([tag, count]) => (
+          <li>
+            <a href={`/${lang}/tags/${tag}`}>
+              <span>{tag}</span>
+              <span class="num">{count}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</aside>

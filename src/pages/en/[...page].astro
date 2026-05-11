@@ -1,0 +1,104 @@
+---
+import type { GetStaticPathsOptions } from 'astro';
+import Base from '@/layouts/Base.astro';
+import PostCard from '@/components/PostCard.astro';
+import Sidebar from '@/components/Sidebar.astro';
+import { t } from '@/i18n';
+import { getPosts, getTranslationMap } from '@/lib/content';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = await getPosts('en');
+  return paginate(posts, { pageSize: 8 });
+}
+
+const lang = 'en' as const;
+const { page } = Astro.props;
+const allPosts = await getPosts(lang);
+const translations = await getTranslationMap(lang);
+---
+
+<Base
+  title="Miguel Valdes — blog"
+  description="A workshop for the curious. Software engineering, automation, observability, and self-hosting — in English and Spanish."
+  lang={lang}
+>
+  {page.currentPage === 1 && (
+    <section class="hero">
+      <div class="hero-left reveal reveal-1">
+        <div class="eyebrow">{t(lang, 'hero.eyebrow')}</div>
+        <h1>
+          {t(lang, 'hero.headline')}
+          <span class="em">{t(lang, 'hero.headline.em')}</span>
+          {t(lang, 'hero.headline.tail')}
+          <span class="sub">{t(lang, 'hero.subhead')}</span>
+        </h1>
+        <p class="lede">{t(lang, 'hero.lede')}</p>
+      </div>
+
+      <div class="hero-right reveal reveal-2">
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.role')}</span>
+          <span class="hero-meta-val">platform &amp; observability @ <span style="color: var(--accent);">signoz</span></span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.stack')}</span>
+          <span class="hero-meta-val">
+            <span class="tag">k8s</span><span class="tag">otel</span><span class="tag">clickhouse</span><span class="tag">cilium</span>
+          </span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.writes')}</span>
+          <span class="hero-meta-val">en · es</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.location')}</span>
+          <span class="hero-meta-val">USA</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.homelab')}</span>
+          <span class="hero-meta-val">eva01 · 4-node k3s</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.lastBuild')}</span>
+          <span class="hero-meta-val" style="color: var(--accent);">
+            {new Date().toISOString().slice(0, 10)} · ok
+          </span>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <main class="layout">
+    <section class="reveal reveal-3">
+      <div class="section-title">
+        <span>{t(lang, 'section.latest')}</span>
+        <span class="count">{page.total} {t(lang, 'post.posts')}</span>
+      </div>
+      {page.data.map((post) => (
+        <PostCard
+          href={`/${lang}/posts/${post.id}`}
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          tags={post.data.tags}
+          lang={lang}
+          translationHref={post.data.translationKey ? translations.get(post.data.translationKey) : undefined}
+        />
+      ))}
+
+      <nav class="pagination">
+        {page.url.prev && (
+          <a href={page.url.prev} class="pagination-link">{t(lang, 'page.prev')}</a>
+        )}
+        <span class="pagination-info">
+          {page.currentPage} {t(lang, 'page.of')} {page.lastPage}
+        </span>
+        {page.url.next && (
+          <a href={page.url.next} class="pagination-link">{t(lang, 'page.next')}</a>
+        )}
+      </nav>
+    </section>
+
+    <Sidebar lang={lang} posts={allPosts} />
+  </main>
+</Base>

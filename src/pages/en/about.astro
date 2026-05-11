@@ -1,0 +1,47 @@
+---
+import Base from '@/layouts/Base.astro';
+
+const lang = 'en' as const;
+---
+
+<Base
+  title="About — Miguel Valdes"
+  description="A self-taught software engineer obsessed with observability, automation, and self-hosting."
+  lang={lang}
+>
+  <article class="prose">
+    <h1>Hello, Hola!</h1>
+
+    <div class="about-intro">
+      <div class="about-photo">
+        <img src="https://s3.mvaldes.dev/me.png" alt="Miguel Valdes" />
+      </div>
+      <p>
+        This is more than just a blog, it's a workshop for the curious and a log of my journey through
+        the ever-evolving world of software engineering. I believe in the power of automation, the
+        elegance of clean code, and the satisfaction of owning your own data.
+      </p>
+    </div>
+    <p>
+      Join me as I explore the latest in DevOps tooling, share what I've learned from my
+      self-hosting projects, and dive into the architecture behind the software we use every day.
+      Let's grow our skills together.
+    </p>
+    <p>
+      Follow me on <a href="https://x.com/mr_mvaldes" target="_blank" rel="noopener">X</a> for
+      quick tips, new project updates, and more behind-the-scenes content. I'd love to connect and
+      hear your thoughts.
+    </p>
+
+    <h2>About Me</h2>
+    <ul>
+      <li>Self-taught software engineer — originally studied electronic engineering because I wanted to build an Evangelion</li>
+      <li>Father of 3 beautiful little girls</li>
+      <li>Living in the USA, some call it the American Dream</li>
+      <li>Spanish is my main language but I do English as well</li>
+      <li>Somehow landed in the world of Observability and Platform Engineering and <strong>I LOVE IT</strong></li>
+      <li>Neovim and terminal guy — not using arch btw</li>
+      <li>Running a rack in my basement with machines and network equipment — The Homelab</li>
+    </ul>
+  </article>
+</Base>
