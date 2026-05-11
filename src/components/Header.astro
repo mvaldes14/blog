@@ -24,9 +24,9 @@ const esHref = lang === 'es' ? Astro.url.pathname : (translationHref ?? '/es');
     </a>
     <div class="nav-links">
       <a href={`/${lang}`}>{t(lang, 'nav.writing')}</a>
-      <a href={`/${lang}/video`}>{t(lang, 'nav.video')}</a>
-      <a href={`/${lang}/talks`}>{t(lang, 'nav.talks')}</a>
-      <a href={`/${lang}/projects`}>{t(lang, 'nav.projects')}</a>
+      <a href="/video">{t(lang, 'nav.video')}</a>
+      <a href="/talks">{t(lang, 'nav.talks')}</a>
+      <a href="/projects">{t(lang, 'nav.projects')}</a>
       <a href={`/${lang}/about`}>{t(lang, 'nav.about')}</a>
     </div>
     <div class="lang-switch" role="group" aria-label="Language">

@@ -6,7 +6,7 @@ import { getTranslationMap } from '@/lib/content';
 import { t } from '@/i18n';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('es', ({ data }: CollectionEntry<'es'>) => !data.draft);
+  const posts = await getCollection('posts', ({ data }: CollectionEntry<'posts'>) => data.lang === 'es' && !data.draft);
   const tags = new Set<string>();
   for (const p of posts) for (const tag of p.data.tags) tags.add(tag);
 
@@ -15,15 +15,15 @@ export async function getStaticPaths() {
     props: {
       tag,
       posts: posts
-        .filter((p: CollectionEntry<'es'>) => p.data.tags.includes(tag))
-        .sort((a: CollectionEntry<'es'>, b: CollectionEntry<'es'>) =>
+        .filter((p: CollectionEntry<'posts'>) => p.data.tags.includes(tag))
+        .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) =>
           b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
         ),
     },
   }));
 }
 
-const { tag, posts } = Astro.props as { tag: string; posts: CollectionEntry<'es'>[] };
+const { tag, posts } = Astro.props as { tag: string; posts: CollectionEntry<'posts'>[] };
 const lang = 'es' as const;
 const translations = await getTranslationMap(lang);
 ---

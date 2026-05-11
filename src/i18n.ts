@@ -34,7 +34,7 @@ export const ui = {
     'post.readTranslation': 'leer en español',
     'post.posts': 'posts',
     'post.minRead': 'min read',
-    'footer.builtWith': 'built with Astro · written in Obsidian',
+    'footer.builtWith': 'Astro <> Obsidian',
     'lang.other': 'ES',
     'lang.otherLong': 'Leer en español',
     'page.prev': '← newer',
