@@ -1,13 +1,20 @@
 version: "3"
 tasks:
   dev:
-    desc: "Start the Quartz development server"
+    desc: "Start the Astro development server"
     cmds:
-      - npx quartz build --serve
+      - npm run dev
+
+  build:
+    desc: "Build the site"
+    cmds:
+      - npm run build
+
   clean:
-    desc: "Remove generated public files"
+    desc: "Remove build output"
     cmds:
-      - rm -rf public
+      - rm -rf dist
+
   publish:
     desc: "Commit and push changes"
     vars:
@@ -17,10 +24,11 @@ tasks:
       - git add .
       - 'git commit -m "docs: update blog content {{.DATE}}"'
       - git push
+
   sync:
-    desc: "Sync blog content from Obsidian"
+    desc: "Sync blog content from Obsidian and ensure lang frontmatter is set"
     vars:
       VAULT_PATH:
-        sh: if uname -s | grep -i darwin > /dev/null; then echo "~/Obsidian/wiki/03-Blog/"; else echo "/mnt/c/Users/migue/Documents/wiki/03-Blog/"; fi
+        sh: if uname -s | grep -i darwin > /dev/null; then echo "~/Obsidian/wiki/Blog/"; else echo "/mnt/c/Users/migue/Documents/wiki/03-Blog/"; fi
     cmds:
-      - cmd: rsync -r {{.VAULT_PATH}} content
+      - cmd: rsync -r {{.VAULT_PATH}} src/content/posts/

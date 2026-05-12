@@ -1,0 +1,31 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Post from '@/layouts/Post.astro';
+import { getTranslationMap } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }: CollectionEntry<'posts'>) => data.lang === 'es' && !data.draft);
+  return posts.map((post: CollectionEntry<'posts'>) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'posts'> };
+const { Content } = await render(post);
+
+const translations = await getTranslationMap('es');
+const translationHref = post.data.translationKey ? translations.get(post.data.translationKey) : undefined;
+---
+
+<Post
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+  lang="es"
+  translationHref={translationHref}
+>
+  <Content />
+</Post>

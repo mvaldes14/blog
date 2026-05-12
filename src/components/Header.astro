@@ -1,0 +1,37 @@
+---
+import { t, type Lang } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+  // If a translation exists for the current page, link to it directly.
+  // Otherwise, falls back to the other language's home.
+  translationHref?: string;
+}
+
+const { lang, translationHref } = Astro.props;
+
+// Each button routes to that language's equivalent:
+// - On EN page: EN button stays put, ES button → translation or /es home
+// - On ES page: ES button stays put, EN button → translation or /en home
+const enHref = lang === 'en' ? Astro.url.pathname : (translationHref ?? '/en');
+const esHref = lang === 'es' ? Astro.url.pathname : (translationHref ?? '/es');
+---
+
+<nav class="top">
+  <div class="nav-inner">
+    <a href={`/${lang}`} class="brand">
+      <span class="prompt">$</span>mvaldes<span class="cursor"></span>
+    </a>
+    <div class="nav-links">
+      <a href={`/${lang}`}>{t(lang, 'nav.writing')}</a>
+      <a href="/video">{t(lang, 'nav.video')}</a>
+      <a href="/talks">{t(lang, 'nav.talks')}</a>
+      <a href="/projects">{t(lang, 'nav.projects')}</a>
+      <a href={`/${lang}/about`}>{t(lang, 'nav.about')}</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <a href={enHref} class={lang === 'en' ? 'active' : ''} hreflang="en">EN</a>
+      <a href={esHref} class={lang === 'es' ? 'active' : ''} hreflang="es">ES</a>
+    </div>
+  </div>
+</nav>

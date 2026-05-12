@@ -1,0 +1,49 @@
+---
+import Base from '@/layouts/Base.astro';
+
+const lang = 'es' as const;
+---
+
+<Base
+  title="Sobre mí — Miguel Valdes"
+  description="Ingeniero de software autodidacta obsesionado con la observabilidad, la automatización y el self-hosting."
+  lang={lang}
+  translationHref="/en/about"
+>
+  <article class="prose">
+    <h1>¡Hola, Hello!</h1>
+
+    <div class="about-intro">
+      <div class="about-photo">
+        <img src="https://s3.mvaldes.dev/me.png" alt="Miguel Valdes" />
+      </div>
+      <p>
+        Esto es más que un blog — es un taller para los curiosos y un registro de mi camino por el
+        mundo en constante evolución de la ingeniería de software. Creo en el poder de la
+        automatización, la elegancia del código limpio y la satisfacción de ser dueño de tus propios
+        datos.
+      </p>
+    </div>
+    <p>
+      Acompáñame mientras exploro las últimas herramientas de DevOps, comparto lo que he aprendido
+      en mis proyectos de self-hosting y profundizo en la arquitectura del software que usamos a
+      diario. Crezcamos juntos.
+    </p>
+    <p>
+      Sígueme en <a href="https://x.com/mr_mvaldes" target="_blank" rel="noopener">X</a> para tips
+      rápidos, actualizaciones de proyectos y más contenido detrás de cámara. Me encantaría
+      conectar y escuchar tus ideas.
+    </p>
+
+    <h2>Sobre mí</h2>
+    <ul>
+      <li>Ingeniero de software autodidacta — estudié ingeniería electrónica porque quería construir un Evangelion</li>
+      <li>Padre de 3 hermosas niñas</li>
+      <li>Viviendo en USA, algunos le llaman el Sueño Americano</li>
+      <li>El español es mi idioma principal, pero el inglés también</li>
+      <li>De alguna manera llegué al mundo de la Observabilidad e Ingeniería de Plataformas y <strong>ME ENCANTA</strong></li>
+      <li>Usuario de Neovim y la terminal — no uso arch btw</li>
+      <li>Tengo un rack en mi sótano con máquinas y equipo de red — The Homelab</li>
+    </ul>
+  </article>
+</Base>

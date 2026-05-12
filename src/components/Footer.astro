@@ -1,0 +1,24 @@
+---
+import { t, type Lang } from '@/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="bottom">
+  <div>© {year} Miguel Valdes · {t(lang, 'footer.builtWith')}</div>
+  <div class="socials">
+    <a href="https://umami.mvaldes.dev/q/qCe4bIDmD" target="_blank" rel="noopener">github</a>
+    <a href="https://umami.mvaldes.dev/q/i5x2nC3Q6" target="_blank" rel="noopener">x</a>
+    <a href="https://umami.mvaldes.dev/q/AdYVxNFvA" target="_blank" rel="noopener">linkedin</a>
+    <a href="https://umami.mvaldes.dev/q/SCC69Srrb" target="_blank" rel="noopener">youtube</a>
+    <a href="https://umami.mvaldes.dev/q/VbxYP57ta" target="_blank" rel="noopener">twitch</a>
+    <a href="https://umami.mvaldes.dev/q/1ZrBw2bvA" target="_blank" rel="noopener">discord</a>
+    <a href="/en/rss.xml">rss·en</a>
+    <a href="/es/rss.xml">rss·es</a>
+  </div>
+</footer>
