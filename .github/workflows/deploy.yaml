@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -29,6 +29,7 @@ jobs:
       - name: Docker Build and Push
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
           tags: rorix/blog:${{steps.generate_tag.outputs.IMAGE_TAG}}
 
