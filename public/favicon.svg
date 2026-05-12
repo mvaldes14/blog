@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#0e0f0d"/>
-  <text x="16" y="22" font-family="JetBrains Mono, monospace" font-size="20" font-weight="600" fill="#7fd3a2" text-anchor="middle">$</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="512" height="512">
+  <rect width="32" height="32" fill="#0e0f0d" />
+  <g transform="translate(3.5472,27.0000) scale(0.04151,-0.04151)" fill="#7fd3a2">
+    <path d="M42 0V550H160V470H166Q169 507 192 532Q219 560 259 560Q302 560 326 523Q340 501 346 470H352Q355 507 377 532Q403 560 447 560Q497 560 528.0 522.5Q559 485 559 420V0H430V410Q430 433 420.0 445.5Q410 458 391.0 458.0Q372 458 362.0 445.5Q352 433 352 410V0H249V410Q249 433 239.0 445.5Q229 458 210.0 458.0Q191 458 181.0 445.5Q171 433 171 410V0Z"/>
+  </g>
 </svg>
