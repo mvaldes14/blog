@@ -2,7 +2,7 @@
 lang: en
 title: GitOps is important, even in your homelab
 description: If you are not using GitOps in your homelab, sorry to tell ya but you're ngmi.
-pubDate:
+pubDate: 05/19/2026
 tags:
   - homelab
   - automation
