@@ -8,7 +8,6 @@ tags:
   - projects
 draft: false
 ---
-
 ## Just build it bro
 
 It all started on a night out with my buddies; a friend of mine showed me he is building a little todo app by purely prompting it like a pro. The following day, after a good hangover, I thought to myself: what if instead of renewing my Todoist sub at an elevated price and using 10 out of 50 features they offer, I build my own app with a 10x developer guy I know — "Claude"? He will not complain or ask for revenue once we ship it.
