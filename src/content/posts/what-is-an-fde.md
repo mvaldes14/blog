@@ -3,7 +3,7 @@ lang: en
 title: What is a Forward Deployed Engineer? 8 months in the role
 description: I swapped "SRE" for "Forward Deployed Engineer" last November. Here's what the buzzword actually means day to day, and what I'd learn before chasing the role.
 pubDate: 2026-07-24
-draft: false
+draft: false 
 tags:
   - meta
 ---
@@ -16,11 +16,11 @@ The TL;DR from the article in my humble opinion: you become a mix of an SRE and 
 
 That's an oversimplification, of course. The role needs deep knowledge of networking, cloud providers, and the deployment patterns used in production. No two customers are alike, which is what makes it interesting: the product runs differently every single time. You also need to know your own product inside and out, so you can explain it and adapt it.
 
-> One thing I keep seeing online is that FDEs mostly work for AI product companies, which is misleading at best. I know the AI hype is strong, but there's plenty of opportunities to execute the role without pushing AI into the mix.
+> One thing I keep seeing online is that FDEs mostly work for AI product companies. The title got popular through them, but the work itself is older than the current hype and there's plenty of opportunities to do it without AI in the mix.
 
-Another big part is being the support person for that customer. Maybe that's unique to my org, maybe it's part of the role itself. In a bigger company this probably lives with a dedicated team, but at a smaller shop you may end up doing support and helping customers actually use the product.
+Another big part is being the support person for that customer. How much of it lands on you comes down to company size more than anything. In a bigger company this probably lives with a dedicated team, but at a smaller shop you may end up doing support and helping customers actually use the product.
 
-It's not far off from what a Solutions Engineer does: you're the product expert, you know how it was deployed, and you know the workflows it's being used for. Nothing negative about it, but keep it in mind if you're considering this kind of role. Better yet, ask about it in the interview if support isn't the work you want.
+It's not far off from what a Solutions Engineer does: you're the product expert, you know how it was deployed, and you know the workflows it's being used for. Nothing negative about it, but keep it in mind if you're considering this kind of role. The scope varies a lot between companies, so ask in the interview where that line sits.
 
 Personally, I started my IT career in support, so I'm used to it. It's how I find problems to solve.
 
@@ -49,13 +49,15 @@ If my ultimate goal was to become an FDE, I would want **a good amount** of expe
 - Linux and terminal: You will need to validate or troubleshoot the product at some point. That means remoting into machines and containers, or using the CLI to pull the information you need.
 - A good system to track: This one depends heavily on your organization and its requirements. But they can hand you the best tool out there and it still won't work if you don't have the habit of writing down and reviewing your work daily.
 - Document everything: A general practice, but here you'll run into a lot of scenarios that end up becoming a product feature or a reusable playbook for the next customer. Do yourself a favor and **just write it down**.
-- Communication is key: You'll be talking to engineers and managers from all over, internal and external. Be clear about your intent and assume good intentions. You're representing your company and your product, so keep that in mind. Engineering tends to be full of big egos, so it's always a challenge.
+- Communication is key: You'll be talking to engineers and managers from all over, internal and external. Be clear about your intent and assume good intentions. You're representing your company and your product, so keep that in mind. Tech is an opinionated industry, so expect some friction and don't take it personally.
 
 
 ## Conclusion
 That's my honest take on the role, the duties, and what I think you need to pursue it.
 
 If all of that sounds good, you know what to go learn. And if none of it appealed to you, that's just as useful: you can drop the role from your job search, because the support and communication side isn't for everyone.
+
+*Everything above is my own experience and opinion. It's not an official description of any employer's role, team, or process.*
 
 Until the next one!
 
