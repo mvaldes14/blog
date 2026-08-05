@@ -5,7 +5,6 @@ description: Learning by doing is always a good excuse. Ruby was required for wo
 pubDate: 2022-04-17
 draft: false
 tags:
-  - automation
   - coding
 ---
 

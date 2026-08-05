@@ -8,11 +8,14 @@ interface Props {
   pubDate: Date;
   tags: string[];
   lang: Lang;
+  // Language the post itself was written in. Differs from `lang` on tag pages,
+  // which list posts from every language. Defaults to the page's language.
+  postLang?: Lang;
   // Full href of the translation if one exists, undefined otherwise.
   translationHref?: string;
 }
 
-const { href, title, description, pubDate, tags, lang, translationHref } = Astro.props;
+const { href, title, description, pubDate, tags, lang, postLang = lang, translationHref } = Astro.props;
 const hasTranslation = !!translationHref;
 ---
 
@@ -20,8 +23,8 @@ const hasTranslation = !!translationHref;
   <div class="post-date">
     {formatDate(pubDate, lang)}
     <br />
-    <span class={`lang-pill ${hasTranslation ? 'both' : lang}`}>
-      {hasTranslation ? 'EN · ES' : lang.toUpperCase()}
+    <span class={`lang-pill ${hasTranslation ? 'both' : postLang}`}>
+      {hasTranslation ? 'EN · ES' : postLang.toUpperCase()}
     </span>
   </div>
   <div>

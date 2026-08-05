@@ -5,7 +5,8 @@ description: Yeah I cannot believe I went back to MS after 4 years on good Linux
 pubDate: 2020-07-19
 draft: false
 tags:
-  - meta
+  - gear
+  - wsl
 ---
 
 <img src="https://s3.mvaldes.dev/blog/winfetch.png" alt="Windows fetch" />

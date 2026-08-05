@@ -5,7 +5,6 @@ description: Knowing what your kids will eat can help debunking their lies.
 pubDate: 2024-05-03
 draft: false
 tags:
-  - automation
   - coding
 ---
 Great teachers on the internet preach that in order to learn a new language effectively, you have to build something with it. Also, those great teachers are pretty much tech Twitter, which can be toxic and polarizing. So take their lessons with a grain of salt.

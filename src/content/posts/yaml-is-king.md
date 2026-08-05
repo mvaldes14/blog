@@ -5,9 +5,8 @@ description: Hate to say it but YAML won the great devops wars. We really need t
 pubDate: 2025-02-02
 draft: false
 tags:
-- coding
-- k8s
-- iac
+  - iac
+  - k8s
 ---
 
 Got a short one for you this week.

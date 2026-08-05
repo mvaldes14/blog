@@ -5,8 +5,8 @@ description: Set your machines in a consisten way with Ansible
 pubDate: 2019-08-20
 draft: false
 tags:
+  - ansible
   - automation
-  - configuration-management
 ---
 
 I've been distro hoping for a month or so now trying to find the perfect balance between productivity and ease of use as well as aesthetics, so I could feel comfortable using my computer for more than just messing around (Ended up staying with Manjaro KDE in case you were curious).

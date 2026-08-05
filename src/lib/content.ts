@@ -12,6 +12,30 @@ export async function getPosts(lang: Lang): Promise<PostEntry[]> {
 }
 
 /**
+ * Returns every non-draft post across all languages, sorted newest-first.
+ * Tags are language-agnostic, so anything that aggregates them reads from here.
+ */
+export async function getAllPosts(): Promise<PostEntry[]> {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+}
+
+/**
+ * Tags ranked by how many posts carry them, most-used first.
+ * Ties break toward the tag on the most recent post, since `posts` arrives
+ * newest-first and both Map iteration and Array.sort preserve that order.
+ */
+export function topTags(posts: PostEntry[], limit: number): [string, number][] {
+  const counts = new Map<string, number>();
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
+}
+
+/**
  * Build a map of translationKey -> href for the OTHER language.
  * Used to render translation links and hreflang alternates.
  */

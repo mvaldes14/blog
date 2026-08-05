@@ -5,7 +5,7 @@ description: The first every workshop I did with some audience?
 pubDate: 2025-02-11
 draft: false
 tags:
-  - meta
+  - career
 ---
 Part of my resolutions for this year is to do more public speaking so I've been looking for opportunities to do so at local meetups, company conferences or anything basically.
 

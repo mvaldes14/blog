@@ -5,7 +5,7 @@ description: I swapped "SRE" for "Forward Deployed Engineer" last November. Here
 pubDate: 2026-07-24
 draft: false 
 tags:
-  - meta
+  - career
 ---
 
 "Forward Deployed Engineer." That was my new title as of last November, swapped in for "SRE" after I changed jobs. My first reaction? What the hell does that even mean, and what kind of buzzword is this?

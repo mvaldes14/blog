@@ -5,7 +5,7 @@ description: I cannot believe it's free for anyone, how are they gonna make it?
 pubDate: 2024-07-21
 draft: false
 tags:
-- homelab
+  - homelab
 ---
 
 Big part of owning a Homelab is running a ton of services for myself or the family, some of which can be and should be [accessed via the internet](https://mvaldes.dev/blog/cloudflare-tunnels/) but some of them are private so, I'd like to still figure out a way to get to them without exposing or doing weird reverse proxy magic to filter requests/headers.

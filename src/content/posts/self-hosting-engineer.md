@@ -5,7 +5,7 @@ description: I can probably say I am better than you on some aspects because I r
 pubDate: 2024-10-30
 draft: false
 tags:
-  - meta
+  - career
 ---
 
 It is a **fact** that people who are passionate about a topic or subject tend to know more or do better at said topics, so in the case of Software Engineers you probably have run into couple different types of engineers, which in my humble opinion (__based on working in the industry for 12 years now__); These are the 3 big "types":

@@ -5,8 +5,8 @@ description: Are you getting what you pay for from your ISP?
 pubDate: 2021-01-25
 draft: false
 tags:
-- automation
-- homelab
+  - homelab
+  - observability
 ---
 
 In a previous [post](https:/mvaldes.dev/speedtest-kibana.html) I show cased how you could start collecting some of the metrics that scripts like `speedtest` can dump out and you can leverage that data by ingesting into an Elasticseach cluster so you can later visualize in Kibana dashboards and while that is super nice, the more and more I keep playing with Time Series Databases the more I start to think that full blown logging systems like Elastic and Splunk are simply an overkill for simple numerical metrics like values at specific points in time. Not to stay the tools can't handle it but its like using a jackhammer to hang a picture in your wall.

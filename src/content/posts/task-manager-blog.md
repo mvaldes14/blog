@@ -5,7 +5,8 @@ description: I cancelled Todoist, opened Claude and built my own task manager in
 pubDate: 2026-04-07
 tags:
   - ai
-  - projects
+  - coding
+  - productivity
 draft: false
 ---
 ## Just build it bro

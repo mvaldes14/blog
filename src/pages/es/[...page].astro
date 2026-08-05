@@ -4,7 +4,7 @@ import Base from '@/layouts/Base.astro';
 import PostCard from '@/components/PostCard.astro';
 import Sidebar from '@/components/Sidebar.astro';
 import { t } from '@/i18n';
-import { getPosts, getTranslationMap } from '@/lib/content';
+import { getAllPosts, getPosts, getTranslationMap, topTags } from '@/lib/content';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = await getPosts('es');
@@ -13,8 +13,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const lang = 'es' as const;
 const { page } = Astro.props;
-const allPosts = await getPosts(lang);
 const translations = await getTranslationMap(lang);
+const heroTags = topTags(await getAllPosts(), 4);
 ---
 
 <Base
@@ -38,12 +38,14 @@ const translations = await getTranslationMap(lang);
       <div class="hero-right reveal reveal-2">
         <div class="hero-meta-row">
           <span class="hero-meta-key">{t(lang, 'meta.role')}</span>
-          <span class="hero-meta-val">platform &amp; observabilidad @ <span style="color: var(--accent);">signoz</span></span>
+          <span class="hero-meta-val">Forward Deployed Engineer @ <span style="color: var(--accent);">SigNoz</span></span>
         </div>
         <div class="hero-meta-row">
           <span class="hero-meta-key">{t(lang, 'meta.stack')}</span>
           <span class="hero-meta-val">
-            <span class="tag">k8s</span><span class="tag">otel</span><span class="tag">clickhouse</span><span class="tag">cilium</span>
+            {heroTags.map(([tag]) => (
+              <a class="tag" href={`/${lang}/tags/${tag}`}>{tag}</a>
+            ))}
           </span>
         </div>
         <div class="hero-meta-row">
@@ -99,6 +101,6 @@ const translations = await getTranslationMap(lang);
       </nav>
     </section>
 
-    <Sidebar lang={lang} posts={allPosts} />
+    <Sidebar lang={lang} />
   </main>
 </Base>

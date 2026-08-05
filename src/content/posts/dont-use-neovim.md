@@ -5,7 +5,7 @@ description: Despite the FOMO you really need to think what editor you will use,
 pubDate: 2024-12-27
 draft: false
 tags:
-- neovim
+  - neovim
 ---
 I know this will sound weird specially coming from someone that lives and spends 70% of my time living in a terminal and using neovim btw but sometimes it's really ok to not use the hot and cool tool that people tell you to use.
 

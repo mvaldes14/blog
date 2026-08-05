@@ -5,7 +5,7 @@ description: Lessons from self hosting in 2024
 pubDate:  2024-03-25
 draft: false
 tags:
-- homelab
+  - homelab
 ---
 
 It's been 4 years since the self-hosted adventure began and it gets bigger and weirder as seasons come and go. What started with a single Dell refurbished machine (which i still use) to run certain services back in [2020](https://mvaldes.dev/blog/docker-home-setup/) has now evolved into an actual mini rack with some serious network devices and more machines. So lets see what changed sine my last post back in [2022](https://mvaldes.dev/blog/selfhosted-2022)

@@ -5,8 +5,8 @@ description: The basics of Ansible
 pubDate: 2019-01-18
 draft: false
 tags:
+  - ansible
   - automation
-  - configuration-management
 ---
 
 ## Overview

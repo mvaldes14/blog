@@ -5,7 +5,7 @@ description: Once you go split, you cannot go back easily. Your shoulders, wrist
 pubDate: 2024-09-24
 draft: false
 tags:
-  - meta
+  - gear
 ---
 It's been 3 months or so now from when my journey into the split keyboards started and I blame my old cheap self and tech twitter who once again managed to "influence" me into buying things I probably should've acquired a long time ago.
 

@@ -5,9 +5,9 @@ description: You can use neovim to also navigate your terraform infrastructure, 
 pubDate: 2023-07-28
 draft: false
 tags:
-  - neovim
+  - coding
   - iac
-  - projects
+  - neovim
 ---
 
 Part of my work requires me to work with terraform...a lot of terraform since everything has to be done via IaC, or it simply doesn't go through AWS, so since my editor of choice is Neovim and anyone can basically create any extension to do whatever...I figured why not have a dedicated terraform plugin to do some planing and exploring?!.

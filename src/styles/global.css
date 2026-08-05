@@ -224,6 +224,10 @@ nav.top {
   border-radius: 3px;
   margin-right: 4px;
   font-size: 11px;
+  transition: all 0.15s;
+}
+.hero-meta-val a.tag:hover {
+  background: rgba(127, 211, 162, 0.16);
 }
 
 /* ---------------- Main / grid ---------------- */
@@ -505,13 +509,20 @@ article.prose h1 {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
+/* Description + tags form one intro block; the rule divides it from the body. */
+article.prose .post-intro {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
 article.prose .description {
   color: var(--fg-dim);
   font-size: 17px;
   line-height: 1.6;
-  margin-bottom: 40px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0;
+}
+article.prose .post-intro .post-tags {
+  margin-top: 20px;
 }
 article.prose h2 {
   font-size: 22px;

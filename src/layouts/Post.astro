@@ -26,17 +26,18 @@ const { title, description, pubDate, updatedDate, tags, lang, translationHref } 
     </div>
 
     <h1>{title}</h1>
-    <p class="description">{description}</p>
+    <div class="post-intro">
+      <p class="description">{description}</p>
+      {tags.length > 0 && (
+        <div class="post-tags">
+          {tags.map((tag) => (
+            <a class="tag-chip" href={`/${lang}/tags/${tag}`}>{tag}</a>
+          ))}
+        </div>
+      )}
+    </div>
 
     <slot />
-
-    {tags.length > 0 && (
-      <div class="post-tags" style="margin-top: 48px;">
-        {tags.map((tag) => (
-          <a class="tag-chip" href={`/${lang}/tags/${tag}`}>{tag}</a>
-        ))}
-      </div>
-    )}
 
     {translationHref && (
       <div class="post-translation">

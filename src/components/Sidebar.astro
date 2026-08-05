@@ -1,24 +1,15 @@
 ---
 import { t, type Lang } from '@/i18n';
-import type { CollectionEntry } from 'astro:content';
+import { getAllPosts, topTags } from '@/lib/content';
 
 interface Props {
   lang: Lang;
-  posts: (CollectionEntry<'en'> | CollectionEntry<'es'>)[];
 }
 
-const { lang, posts } = Astro.props;
+const { lang } = Astro.props;
 
-// Build topic counts from posts
-const tagCounts = new Map<string, number>();
-for (const post of posts) {
-  for (const tag of post.data.tags) {
-    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
-  }
-}
-const topTopics = [...tagCounts.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 8);
+// Topics are counted across every language, not just the current one.
+const topTopics = topTags(await getAllPosts(), 8);
 
 const aboutCopy = {
   en: {

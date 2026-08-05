@@ -5,7 +5,7 @@ description: Let's try this streaming thing for a bit yes?
 pubDate: 2024-01-18
 draft: false
 tags:
-  - meta
+  - blog
 ---
 
 It has been years since I discovered Twitch, and I regularly use it to watch tournaments of my favorite games or observe others trying out new games. This allows me to validate if it's worth my time and money because watching reviews is cool and all, but seeing someone else play it just hits differently.

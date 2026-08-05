@@ -5,7 +5,7 @@ description: Life with Neovim in 2023 is pretty cool.
 pubDate: 2023-09-19
 draft: false
 tags:
-- neovim
+  - neovim
 ---
 
 I've been using Neovim entirely for everything that I can for over a year now and I gotta say I won't go back to the regular old days of VScode.

@@ -1,15 +1,15 @@
 # blog.mvaldes.dev
 
-Bilingual (EN/ES) personal blog. Built with [Astro 6](https://astro.build), deployed to k3s via FluxCD.
+Bilingual (EN/ES) personal blog. Built with [Astro 6](https://astro.build), shipped as a static site behind nginx in a container.
 
 ## Stack
 
 - **Astro 6** with the Content Layer API
 - **JetBrains Mono** typography, custom CSS (no Tailwind, no UI lib)
-- **Two content collections** (`en`, `es`) sharing a single schema; posts linked via `translationKey`
+- **One `posts` collection**, language selected per-post via a `lang` field
 - **Per-language RSS feeds**, hreflang alternates, sitemap with i18n
 - **Shiki** syntax highlighting (`github-dark-dimmed`)
-- **Static build → nginx → k3s**, image automation via Flux
+- **Static build → nginx → container image**
 
 ## Quick start
 
@@ -21,16 +21,25 @@ npm run preview  # serve the build
 npm run sync     # regenerate astro:content types after schema changes
 ```
 
-Node 22+ recommended.
+Node 22 (see `.node-version`). `devbox` + `direnv` are wired up: `cd` into the repo and `npm install` runs automatically.
+
+There's also a `Taskfile.yaml`:
+
+```bash
+task dev      # npm run dev
+task build    # npm run build
+task clean    # rm -rf dist
+task sync     # rsync posts in from the Obsidian vault
+task publish  # git add . && commit "docs: update blog content <date>" && push
+```
 
 ## Project layout
 
 ```
 src/
 ├── content/
-│   ├── en/                  # English posts (.md / .mdx)
-│   └── es/                  # Spanish posts (.md / .mdx)
-├── content.config.ts        # collection schemas (Zod)
+│   └── posts/               # all posts (.md / .mdx), EN and ES together
+├── content.config.ts        # collection schema (Zod)
 ├── i18n.ts                  # UI strings + locale helpers
 ├── lib/
 │   └── content.ts           # getPosts, getTranslationMap helpers
@@ -44,8 +53,12 @@ src/
 │   └── Sidebar.astro
 ├── pages/
 │   ├── index.astro          # redirects to /en
+│   ├── talks.astro
+│   ├── projects.astro
+│   ├── video.astro
 │   ├── en/
-│   │   ├── index.astro
+│   │   ├── [...page].astro  # paginated post list, 8 per page
+│   │   ├── about.astro
 │   │   ├── posts/[...slug].astro
 │   │   ├── tags/[tag].astro
 │   │   └── rss.xml.ts
@@ -53,55 +66,62 @@ src/
 └── styles/
     └── global.css
 
-k8s/        # Kubernetes manifests (Deployment, Service, IngressRoute, Kustomization, nginx.conf)
-flux/       # Flux image automation (ImageRepository, ImagePolicy, ImageUpdateAutomation)
-.github/workflows/build.yml   # GHA: build & push to ghcr.io
+Dockerfile                    # node build → nginx runtime
+nginx.conf                    # server config baked into the image
 ```
+
+Cluster manifests are **not** in this repo. The blog runs on k3s, but the Deployment/Service/IngressRoute live in the gitops repo alongside everything else Flux reconciles.
 
 ## Adding a post
 
-Create a `.md` (or `.mdx`) file under `src/content/en/` or `src/content/es/`. The filename becomes the URL slug.
+Drop a `.md` (or `.mdx`) file in `src/content/posts/`. The filename becomes the URL slug, and the post lands under `/en/posts/<slug>` or `/es/posts/<slug>` depending on its `lang`.
 
 ### Frontmatter
 
 ```yaml
 ---
-title: "Post title"
-description: "One- or two-sentence summary, used in OG tags and the post list."
-pubDate: 2026-05-10
-updatedDate: 2026-05-15  # optional
-tags: ["kubernetes", "homelab"]
-draft: false              # optional, omit or set true to hide from build
-translationKey: my-key    # optional, see below
-cover: /covers/foo.png    # optional, used as OG image
+lang: en                  # required — "en" or "es", decides which site section it lands in
+title: Self Hosted in 2026
+description: Consolidating hardware and software for the homelab
+pubDate: 2026-08-04
+draft: false
+tags:
+  - homelab
 ---
-
-Your markdown here.
 ```
 
-### Linking translations
+Required: `lang`, `title`, `description`, `pubDate`.
+Optional: `tags` (defaults to `[]`), `draft` (defaults to `false`), `updatedDate`, `cover`, `translationKey`.
 
-If you write the same post in both languages, give them the same `translationKey`:
-
-```yaml
-# src/content/en/cilium-migration.md
-translationKey: cilium-migration-2026
-
-# src/content/es/migracion-cilium.md
-translationKey: cilium-migration-2026
-```
-
-The post list shows an `EN · ES` pill instead of a single-language pill, each post links to its translation, and the language switcher in the header routes you to the equivalent post (not the home page).
-
-Posts without a `translationKey` are language-only and live happily next to translated posts in the feed.
+Schema lives in `src/content.config.ts` — that's the source of truth.
 
 ### Drafts
 
-Set `draft: true`. The post stays in the repo, doesn't build, doesn't appear in RSS or the sitemap.
+Set `draft: true`. The post stays in the repo, doesn't build, doesn't appear in the post list, RSS, or the sitemap.
+
+### Linking translations
+
+If you write the same post in both languages, give both files the same `translationKey`:
+
+```yaml
+# src/content/posts/cilium-migration.md
+lang: en
+translationKey: cilium-migration-2026
+
+# src/content/posts/migracion-cilium.md
+lang: es
+translationKey: cilium-migration-2026
+```
+
+Each post then links to its translation, and the language switcher in the header routes you to the equivalent post instead of the home page. Posts without a `translationKey` are language-only and sit happily next to translated posts in the feed — which is currently every post.
 
 ### MDX
 
-Rename to `.mdx` to import components. Useful for embedded React-like elements, callouts, or interactive demos.
+Rename to `.mdx` to import components. Useful for callouts or interactive demos.
+
+## Writing flow
+
+Posts are drafted in Obsidian (`~/Obsidian/wiki/Blog/`, or the WSL path on Windows) and rsync'd into `src/content/posts/` with `task sync`. Frontmatter in the vault must already carry `lang` — sync doesn't add it. Then `task publish` commits and pushes, which triggers the build.
 
 ## Deployment
 
@@ -109,35 +129,13 @@ Rename to `.mdx` to import components. Useful for embedded React-like elements, 
 
 ```bash
 docker build -t blog-mvaldes .
-docker run -p 8080:8080 blog-mvaldes
+docker run -p 8080:80 blog-mvaldes
 # http://localhost:8080
 ```
 
-### CI/CD flow
+nginx listens on port 80 inside the container (the `EXPOSE 8080` line in the Dockerfile is stale and doesn't match `nginx.conf`).
 
-1. Push to `main`
-2. `.github/workflows/build.yml` builds the image and pushes to `ghcr.io/mvaldes14/blog-mvaldes` with tags `latest` and `sha-<short>`
-3. Flux's `ImageRepository` scans ghcr.io every 5 minutes
-4. `ImagePolicy` picks the newest `sha-*` tag
-5. `ImageUpdateAutomation` writes the tag into `k8s/kustomization.yaml` and commits it back to git
-6. Flux's Kustomization reconciles the change to the cluster
-
-### k3s deployment
-
-Apply the manifests in `k8s/` via your existing Flux setup. The manifests assume:
-
-- A `web` namespace exists
-- Traefik is your ingress controller (adjust `ingressroute.yaml` if you use something else)
-- A cert-manager-issued wildcard TLS secret named `mvaldes-dev-wildcard-tls` exists in the `web` namespace
-
-If the cert lives in another namespace, either copy it (kubed, reflector) or move it.
-
-### Flux image automation
-
-The manifests in `flux/` belong in your gitops repo, not this one. Adjust:
-
-- `imageupdateautomation.yaml` → `spec.update.path` to point at where this repo's k8s manifests are mounted in your gitops layout
-- `imagerepository.yaml` → uncomment `secretRef` if the ghcr image is private
+Pushes are built into a tagged image by CI and rolled out to k3s by Flux from a separate gitops repo.
 
 ## i18n notes
 
@@ -146,14 +144,12 @@ The manifests in `flux/` belong in your gitops repo, not this one. Adjust:
 - The language switcher reads `Astro.url.pathname` and the page's `translationHref` prop. On a post page, this resolves to the equivalent post in the other language via `translationKey`. Elsewhere, it falls back to the other language's home.
 - hreflang alternates only emit when a translation actually exists. No `404`s for "not yet translated" pages.
 
-## What's missing / TODO
+## TODO
 
-- [ ] About page (`/en/about`, `/es/about`)
-- [ ] Talks page (`/en/talks`, `/es/talks`)
-- [ ] Projects page (`/en/projects`, `/es/projects`)
 - [ ] Open Graph default image at `public/og-default.png` (currently 404s)
 - [ ] Search — Pagefind is easy to wire up here, runs on the static build
-- [ ] Decide on Obsidian wiki-link handling if posts come from a vault later
+- [ ] Obsidian wiki-link handling — `task sync` copies posts verbatim, so `[[links]]` render as literal text
+- [ ] Fix the `EXPOSE` / `listen` port mismatch between `Dockerfile` and `nginx.conf`
 
 ## License
 

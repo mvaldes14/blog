@@ -6,7 +6,6 @@ pubDate: 2026-02-11
 tags:
   - ai
   - observability
-  - opentelemetry
 draft: false
 ---
 
