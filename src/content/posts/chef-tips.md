@@ -3,7 +3,7 @@ lang: en
 title: Chef Tips and Tricks
 description: Things I wish I knew when I started using Chef.
 pubDate: 2022-12-10
-draft: false
+status: published
 tags:
   - automation
 ---

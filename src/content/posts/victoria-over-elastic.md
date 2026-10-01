@@ -3,7 +3,7 @@ lang: en
 title: Bye Elastic, Hola Victoria
 description: Friendship ended with Elastic, Victoria and her secrets won me over
 pubDate: 2025-01-24
-draft: false
+status: published
 tags:
   - homelab
   - k8s

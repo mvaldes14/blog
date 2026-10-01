@@ -3,7 +3,7 @@ lang: en
 title: Pihole is pure awesomeness
 description: Stop seeing ads everywhere you go, run a pihole and enjoy the internet!
 pubDate: 2020-08-26
-draft: false
+status: published
 tags:
   - homelab
 ---

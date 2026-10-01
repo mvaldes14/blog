@@ -3,7 +3,7 @@ lang: en
 title: My First Workshop
 description: The first every workshop I did with some audience?
 pubDate: 2025-02-11
-draft: false
+status: published
 tags:
   - career
 ---

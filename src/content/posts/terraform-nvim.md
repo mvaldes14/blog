@@ -3,7 +3,7 @@ lang: en
 title: Navigating Terraform manifests in Neovim
 description: You can use neovim to also navigate your terraform infrastructure, validate and run your plans and apply.
 pubDate: 2023-07-28
-draft: false
+status: published
 tags:
   - coding
   - iac

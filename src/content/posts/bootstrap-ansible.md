@@ -3,7 +3,7 @@ lang: en
 title: Bootstrap your system with ansible
 description: Set your machines in a consisten way with Ansible
 pubDate: 2019-08-20
-draft: false
+status: published
 tags:
   - ansible
   - automation

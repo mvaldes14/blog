@@ -3,7 +3,7 @@ lang: en
 title: What is a Forward Deployed Engineer? 8 months in the role
 description: I swapped "SRE" for "Forward Deployed Engineer" last November. Here's what the buzzword actually means day to day, and what I'd learn before chasing the role.
 pubDate: 2026-07-24
-draft: false 
+status: published
 tags:
   - career
 ---

@@ -3,7 +3,7 @@ lang: en
 title: Meal Notifier with Go
 description: Knowing what your kids will eat can help debunking their lies.
 pubDate: 2024-05-03
-draft: false
+status: published
 tags:
   - coding
 ---

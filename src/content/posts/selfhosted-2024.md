@@ -3,7 +3,7 @@ lang: en
 title: Self Hosted in 2024
 description: Lessons from self hosting in 2024
 pubDate:  2024-03-25
-draft: false
+status: published
 tags:
   - homelab
 ---

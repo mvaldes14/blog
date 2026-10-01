@@ -3,7 +3,7 @@ lang: en
 title: Are you stuck?
 description: Do you ever feel like a paper bag drifting through the wind?
 pubDate: 2025-02-27
-draft: false
+status: published
 tags:
   - career
 ---

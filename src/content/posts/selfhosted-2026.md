@@ -3,7 +3,7 @@ lang: en
 title: Self Hosted in 2026
 description: Consolidating Hardware and Software for the Homelab
 pubDate: 2026-08-04
-draft: false
+status: published
 tags:
   - homelab
 ---

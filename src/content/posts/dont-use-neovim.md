@@ -3,7 +3,7 @@ lang: en
 title: You shouldn't use Neovim
 description: Despite the FOMO you really need to think what editor you will use, it's ok to not say neovim btw.
 pubDate: 2024-12-27
-draft: false
+status: published
 tags:
   - neovim
 ---

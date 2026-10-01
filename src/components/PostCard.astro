@@ -1,5 +1,5 @@
 ---
-import { formatDate, t, type Lang } from '@/i18n';
+import { formatDate, type Lang } from '@/i18n';
 
 interface Props {
   href: string;
@@ -8,24 +8,14 @@ interface Props {
   pubDate: Date;
   tags: string[];
   lang: Lang;
-  // Language the post itself was written in. Differs from `lang` on tag pages,
-  // which list posts from every language. Defaults to the page's language.
-  postLang?: Lang;
-  // Full href of the translation if one exists, undefined otherwise.
-  translationHref?: string;
 }
 
-const { href, title, description, pubDate, tags, lang, postLang = lang, translationHref } = Astro.props;
-const hasTranslation = !!translationHref;
+const { href, title, description, pubDate, tags, lang } = Astro.props;
 ---
 
 <article class="post">
   <div class="post-date">
     {formatDate(pubDate, lang)}
-    <br />
-    <span class={`lang-pill ${hasTranslation ? 'both' : postLang}`}>
-      {hasTranslation ? 'EN · ES' : postLang.toUpperCase()}
-    </span>
   </div>
   <div>
     <h2><a href={href}>{title}</a></h2>
@@ -36,11 +26,6 @@ const hasTranslation = !!translationHref;
           <a class="tag-chip" href={`/${lang}/tags/${tag}`}>{tag}</a>
         ))}
       </div>
-    )}
-    {translationHref && (
-      <a class="translation-link" href={translationHref}>
-        {t(lang, 'post.readTranslation')}
-      </a>
     )}
   </div>
 </article>

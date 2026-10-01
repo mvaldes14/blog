@@ -3,7 +3,7 @@ lang: en
 title: Pihole and ISP Metrics in Prometheus
 description: Are you getting what you pay for from your ISP?
 pubDate: 2021-01-25
-draft: false
+status: published
 tags:
   - homelab
   - observability

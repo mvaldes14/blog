@@ -3,7 +3,7 @@ lang: en
 title: Ollama in WSL + NixOS
 description: Tech quickie lesson from running LLMs locally in Windows and WSL
 pubDate: 2024-10-08
-draft: false
+status: published
 tags:
   - ai
   - nix

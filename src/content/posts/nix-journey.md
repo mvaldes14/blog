@@ -3,7 +3,7 @@ lang: en
 title: I Love/Hate Nix
 description: On the one hand it's amazing and love... on the other I want to punch it.
 pubDate: 2024-05-06
-draft: false
+status: published
 tags:
   - nix
   - wsl

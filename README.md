@@ -1,13 +1,13 @@
 # blog.mvaldes.dev
 
-Bilingual (EN/ES) personal blog. Built with [Astro 6](https://astro.build), shipped as a static site behind nginx in a container.
+English personal blog. Built with [Astro 6](https://astro.build), shipped as a static site behind nginx in a container.
 
 ## Stack
 
 - **Astro 6** with the Content Layer API
 - **JetBrains Mono** typography, custom CSS (no Tailwind, no UI lib)
-- **One `posts` collection**, language selected per-post via a `lang` field
-- **Per-language RSS feeds**, hreflang alternates, sitemap with i18n
+- **One `posts` collection**, currently publishing English posts
+- **Single English RSS feed**
 - **Shiki** syntax highlighting (`github-dark-dimmed`)
 - **Static build → nginx → container image**
 
@@ -38,22 +38,21 @@ task publish  # git add . && commit "docs: update blog content <date>" && push
 ```
 src/
 ├── content/
-│   └── posts/               # all posts (.md / .mdx), EN and ES together
+│   └── posts/               # all posts (.md / .mdx)
 ├── content.config.ts        # collection schema (Zod)
-├── i18n.ts                  # UI strings + locale helpers
+├── i18n.ts                  # UI strings + date helpers
 ├── lib/
-│   └── content.ts           # getPosts, getTranslationMap helpers
+│   └── content.ts           # post helpers
 ├── layouts/
-│   ├── Base.astro           # html lang, meta, hreflang
+│   ├── Base.astro           # html lang + meta
 │   └── Post.astro           # single-post layout
 ├── components/
-│   ├── Header.astro         # nav + language switcher
+│   ├── Header.astro         # nav
 │   ├── Footer.astro
 │   ├── PostCard.astro
 │   └── Sidebar.astro
 ├── pages/
 │   ├── index.astro          # redirects to /en
-│   ├── talks.astro
 │   ├── projects.astro
 │   ├── video.astro
 │   ├── en/
@@ -62,7 +61,6 @@ src/
 │   │   ├── posts/[...slug].astro
 │   │   ├── tags/[tag].astro
 │   │   └── rss.xml.ts
-│   └── es/...               # mirror of en/
 └── styles/
     └── global.css
 
@@ -74,46 +72,32 @@ Cluster manifests are **not** in this repo. The blog runs on k3s, but the Deploy
 
 ## Adding a post
 
-Drop a `.md` (or `.mdx`) file in `src/content/posts/`. The filename becomes the URL slug, and the post lands under `/en/posts/<slug>` or `/es/posts/<slug>` depending on its `lang`.
+Drop a `.md` (or `.mdx`) file in `src/content/posts/`. The filename becomes the URL slug, and published English posts land under `/en/posts/<slug>`.
 
 ### Frontmatter
 
 ```yaml
 ---
-lang: en                  # required — "en" or "es", decides which site section it lands in
+lang: en                  # required — currently only "en" publishes
 title: Self Hosted in 2026
 description: Consolidating hardware and software for the homelab
 pubDate: 2026-08-04
-draft: false
+status: published
 tags:
   - homelab
 ---
 ```
 
 Required: `lang`, `title`, `description`, `pubDate`.
-Optional: `tags` (defaults to `[]`), `draft` (defaults to `false`), `updatedDate`, `cover`, `translationKey`.
+Optional: `tags` (defaults to `[]`), `status` (defaults to `published`; use `draft` for drafts), `updatedDate`, `cover`.
 
 Schema lives in `src/content.config.ts` — that's the source of truth.
 
 ### Drafts
 
-Set `draft: true`. The post stays in the repo, doesn't build, doesn't appear in the post list, RSS, or the sitemap.
+Set `status: draft`. Published posts use `status: published` or omit `status` entirely. Draft posts stay in the repo, don't build, don't appear in the post list, RSS, or the sitemap.
 
-### Linking translations
-
-If you write the same post in both languages, give both files the same `translationKey`:
-
-```yaml
-# src/content/posts/cilium-migration.md
-lang: en
-translationKey: cilium-migration-2026
-
-# src/content/posts/migracion-cilium.md
-lang: es
-translationKey: cilium-migration-2026
-```
-
-Each post then links to its translation, and the language switcher in the header routes you to the equivalent post instead of the home page. Posts without a `translationKey` are language-only and sit happily next to translated posts in the feed — which is currently every post.
+Spanish content can still live in the collection with `lang: es`, but it is not routed or published right now.
 
 ### MDX
 
@@ -137,12 +121,10 @@ nginx listens on port 80 inside the container (the `EXPOSE 8080` line in the Doc
 
 Pushes are built into a tagged image by CI and rolled out to k3s by Flux from a separate gitops repo.
 
-## i18n notes
+## Locale notes
 
-- UI strings live in `src/i18n.ts`. Add new strings to **both** `en` and `es` blocks or the type checker will complain.
+- UI strings live in `src/i18n.ts`.
 - Dates use `Intl.DateTimeFormat` via the `formatDate(date, lang)` helper.
-- The language switcher reads `Astro.url.pathname` and the page's `translationHref` prop. On a post page, this resolves to the equivalent post in the other language via `translationKey`. Elsewhere, it falls back to the other language's home.
-- hreflang alternates only emit when a translation actually exists. No `404`s for "not yet translated" pages.
 
 ## TODO
 

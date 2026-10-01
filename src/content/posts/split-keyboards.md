@@ -3,7 +3,7 @@ lang: en
 title: Split Keyboards are fun
 description: Once you go split, you cannot go back easily. Your shoulders, wrists and arms will thank you.
 pubDate: 2024-09-24
-draft: false
+status: published
 tags:
   - gear
 ---

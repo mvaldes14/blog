@@ -3,7 +3,7 @@ lang: en
 title: Baby Tracker Vue App
 description: How often is your baby eating, pooping and peeing?. It's super important the very first month.
 pubDate: 2022-03-27
-draft: false
+status: published
 tags:
   - coding
 ---

@@ -3,7 +3,7 @@ lang: en
 title: Windows is decent again?
 description: Yeah I cannot believe I went back to MS after 4 years on good Linux full time.
 pubDate: 2020-07-19
-draft: false
+status: published
 tags:
   - gear
   - wsl

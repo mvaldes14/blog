@@ -7,7 +7,7 @@ tags:
   - ai
   - coding
   - productivity
-draft: false
+status: published
 ---
 ## Just build it bro
 

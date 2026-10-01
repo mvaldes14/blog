@@ -7,10 +7,9 @@ const postSchema = z.object({
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
   tags: z.array(z.string()).default([]),
-  draft: z.boolean().default(false),
+  status: z.enum(['draft', 'published']).default('published'),
+  // Keep `es` valid so Spanish drafts can live in the collection, but only English routes build today.
   lang: z.enum(['en', 'es']),
-  // Links translations of the same post across languages.
-  translationKey: z.string().optional(),
   cover: z.string().optional(),
 });
 

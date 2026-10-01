@@ -3,7 +3,7 @@ lang: en
 title: Why Self-Hosting made me a better engineer
 description: I can probably say I am better than you on some aspects because I run and build my own stuff.
 pubDate: 2024-10-30
-draft: false
+status: published
 tags:
   - career
 ---

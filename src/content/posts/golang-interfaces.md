@@ -3,7 +3,7 @@ lang: en
 title: Golang Interfaces are easy
 description: Once an interface and how it works clicks, your life will never be the same.... Maybe not but at least things will be easier to read.
 pubDate: 2024-12-18
-draft: false
+status: published
 tags:
   - coding
 ---

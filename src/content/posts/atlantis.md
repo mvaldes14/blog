@@ -3,7 +3,7 @@ lang: en
 title: Terraform Automation with Atlantis
 description: IaC even at home, it may not be as fun but it sure teaches you a lot.
 pubDate: 2023-10-04
-draft: false
+status: published
 tags:
   - automation
   - iac

@@ -3,7 +3,7 @@ lang: en
 title: Ansible 101
 description: The basics of Ansible
 pubDate: 2019-01-18
-draft: false
+status: published
 tags:
   - ansible
   - automation

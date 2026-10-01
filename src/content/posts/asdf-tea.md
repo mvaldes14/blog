@@ -3,7 +3,7 @@ lang: en
 title: Introducing asdf-tea
 description: How I found a whole in asdf that i decided to sort of patch
 pubDate: 2023-07-24
-draft: false
+status: published
 tags:
   - coding
 ---

@@ -7,7 +7,7 @@ tags:
   - automation
   - homelab
   - k8s
-draft: false
+status: published
 ---
 So you have a homelab, you run more than two or three services, and like a good engineer you keep the manifests in a git repository. But you still do `kubectl apply -f file.yaml` by hand? My friend, I need you to change the way you think about your homelab and treat it like a production environment.
 

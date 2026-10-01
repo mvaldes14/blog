@@ -1,6 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { formatDate, t, type Lang } from '@/i18n';
+import { formatDate, type Lang } from '@/i18n';
 
 interface Props {
   title: string;
@@ -9,20 +9,16 @@ interface Props {
   updatedDate?: Date;
   tags: string[];
   lang: Lang;
-  translationHref?: string;
 }
 
-const { title, description, pubDate, updatedDate, tags, lang, translationHref } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, lang } = Astro.props;
 ---
 
-<Base title={`${title} — Miguel Valdes`} description={description} lang={lang} translationHref={translationHref}>
+<Base title={`${title} — Miguel Valdes`} description={description} lang={lang}>
   <article class="prose">
     <div class="post-meta">
       <span>{formatDate(pubDate, lang)}</span>
       {updatedDate && <span>· updated {formatDate(updatedDate, lang)}</span>}
-      <span class={`lang-pill ${translationHref ? 'both' : lang}`}>
-        {translationHref ? 'EN · ES' : lang.toUpperCase()}
-      </span>
     </div>
 
     <h1>{title}</h1>
@@ -38,11 +34,5 @@ const { title, description, pubDate, updatedDate, tags, lang, translationHref } 
     </div>
 
     <slot />
-
-    {translationHref && (
-      <div class="post-translation">
-        <a href={translationHref}>↳ {t(lang, 'lang.otherLong')}</a>
-      </div>
-    )}
   </article>
 </Base>

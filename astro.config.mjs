@@ -5,22 +5,16 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
 
-// Update SITE to your final domain when you're ready to cut over from blog.mvaldes.dev
-// or whatever path you decide to use for the bilingual version.
+// Update SITE to your final domain when you're ready to cut over from blog.mvaldes.dev.
 export default defineConfig({
   site: 'https://blog.mvaldes.dev',
   trailingSlash: 'never',
+  server: {
+    host: '0.0.0.0',
+  },
   integrations: [
     mdx(),
-    sitemap({
-      i18n: {
-        defaultLocale: 'en',
-        locales: {
-          en: 'en-US',
-          es: 'es-ES',
-        },
-      },
-    }),
+    sitemap(),
   ],
   markdown: {
     syntaxHighlight: 'shiki',

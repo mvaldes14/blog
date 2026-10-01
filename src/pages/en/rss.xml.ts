@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const posts = await getCollection('posts', ({ data }: CollectionEntry<'posts'>) => data.lang === 'en' && !data.draft);
+  const posts = await getCollection('posts', ({ data }: CollectionEntry<'posts'>) => data.lang === 'en' && data.status === 'published');
   return rss({
     title: 'Miguel Valdes — blog (EN)',
     description: 'A workshop for the curious. Software engineering, automation, observability, and self-hosting.',

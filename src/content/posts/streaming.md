@@ -3,7 +3,7 @@ lang: en
 title: Look ma I'm a Streamer
 description: Let's try this streaming thing for a bit yes?
 pubDate: 2024-01-18
-draft: false
+status: published
 tags:
   - blog
 ---

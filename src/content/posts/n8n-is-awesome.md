@@ -3,7 +3,7 @@ lang: en
 title: n8n is pure awesomeness
 description: Automate everything you can, it's easy and free if you self host it
 pubDate: 2025-12-23
-draft: false
+status: published
 tags:
   - automation
   - productivity

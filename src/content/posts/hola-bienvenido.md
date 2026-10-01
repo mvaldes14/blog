@@ -5,7 +5,7 @@ description: "Una nota corta de bienvenida. Este blog ahora es bilingüe — esc
 pubDate: 2026-05-10
 tags:
   - blog
-draft: false
+status: published
 ---
 
 Hola, hello.

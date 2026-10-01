@@ -3,7 +3,7 @@ lang: en
 title: Neovim in 2023
 description: Life with Neovim in 2023 is pretty cool.
 pubDate: 2023-09-19
-draft: false
+status: published
 tags:
   - neovim
 ---

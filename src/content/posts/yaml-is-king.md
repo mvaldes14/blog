@@ -3,7 +3,7 @@ lang: en
 title: Yaml is King change my mind, please!
 description: Hate to say it but YAML won the great devops wars. We really need to find an alternative way to work with.
 pubDate: 2025-02-02
-draft: false
+status: published
 tags:
   - iac
   - k8s

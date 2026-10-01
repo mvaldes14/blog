@@ -4,7 +4,7 @@ import Base from '@/layouts/Base.astro';
 import PostCard from '@/components/PostCard.astro';
 import Sidebar from '@/components/Sidebar.astro';
 import { t } from '@/i18n';
-import { getAllPosts, getPosts, getTranslationMap, topTags } from '@/lib/content';
+import { getAllPosts, getPosts, topTags } from '@/lib/content';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = await getPosts('en');
@@ -13,13 +13,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const lang = 'en' as const;
 const { page } = Astro.props;
-const translations = await getTranslationMap(lang);
 const heroTags = topTags(await getAllPosts(), 4);
 ---
 
 <Base
   title="Miguel Valdes — blog"
-  description="A workshop for the curious. Software engineering, automation, observability, and self-hosting — in English and Spanish."
+  description="A workshop for the curious. Software engineering, automation, observability, and self-hosting."
   lang={lang}
 >
   {page.currentPage === 1 && (
@@ -27,7 +26,7 @@ const heroTags = topTags(await getAllPosts(), 4);
       <div class="hero-left reveal reveal-1">
         <div class="eyebrow">{t(lang, 'hero.eyebrow')}</div>
         <h1>
-          {t(lang, 'hero.headline')}
+          {t(lang, 'hero.headline')}{' '}
           <span class="em">{t(lang, 'hero.headline.em')}</span>
           {t(lang, 'hero.headline.tail')}
           <span class="sub">{t(lang, 'hero.subhead')}</span>
@@ -49,16 +48,24 @@ const heroTags = topTags(await getAllPosts(), 4);
           </span>
         </div>
         <div class="hero-meta-row">
-          <span class="hero-meta-key">{t(lang, 'meta.writes')}</span>
-          <span class="hero-meta-val">en · es</span>
+          <span class="hero-meta-key">{t(lang, 'meta.infra')}</span>
+          <span class="hero-meta-val">FluxCD · Helm · Terraform · Ansible</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.homelab')}</span>
+          <span class="hero-meta-val">eva01 · 6-node k3s</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-key">{t(lang, 'meta.contact')}</span>
+          <span class="hero-meta-val">
+            <a class="tag" href="https://umami.mvaldes.dev/q/github" target="_blank" rel="noopener">github</a>
+            <a class="tag" href="https://umami.mvaldes.dev/q/linkedin" target="_blank" rel="noopener">linkedin</a>
+            <a class="tag" href="https://umami.mvaldes.dev/q/twitter" target="_blank" rel="noopener">x</a>
+          </span>
         </div>
         <div class="hero-meta-row">
           <span class="hero-meta-key">{t(lang, 'meta.location')}</span>
           <span class="hero-meta-val">USA</span>
-        </div>
-        <div class="hero-meta-row">
-          <span class="hero-meta-key">{t(lang, 'meta.homelab')}</span>
-          <span class="hero-meta-val">eva01 · 4-node k3s</span>
         </div>
         <div class="hero-meta-row">
           <span class="hero-meta-key">{t(lang, 'meta.lastBuild')}</span>
@@ -84,7 +91,6 @@ const heroTags = topTags(await getAllPosts(), 4);
           pubDate={post.data.pubDate}
           tags={post.data.tags}
           lang={lang}
-          translationHref={post.data.translationKey ? translations.get(post.data.translationKey) : undefined}
         />
       ))}
 

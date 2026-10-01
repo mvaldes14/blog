@@ -3,7 +3,7 @@ lang: en
 title: Tailscale is pretty cool
 description: I cannot believe it's free for anyone, how are they gonna make it?
 pubDate: 2024-07-21
-draft: false
+status: published
 tags:
   - homelab
 ---

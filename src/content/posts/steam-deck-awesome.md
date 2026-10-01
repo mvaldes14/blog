@@ -3,7 +3,7 @@ lang: en
 title: The Steam Deck is awesome
 description: Mobile gaming is amazing and addictive.
 pubDate: 2024-01-12
-draft: false
+status: published
 tags:
   - gear
 ---

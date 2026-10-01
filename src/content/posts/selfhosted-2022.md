@@ -3,7 +3,7 @@ lang: en
 title: Self Hosted in 2022
 description: Lessons from self hosting in 2022.
 pubDate: 2022-03-24
-draft: false
+status: published
 tags:
   - homelab
 ---

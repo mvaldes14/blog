@@ -3,7 +3,7 @@ lang: en
 title: Ruby Server Scraper
 description: Learning by doing is always a good excuse. Ruby was required for work so why not build a scraper.
 pubDate: 2022-04-17
-draft: false
+status: published
 tags:
   - coding
 ---
