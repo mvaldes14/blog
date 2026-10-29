@@ -95,4 +95,3 @@ Overall I'm happy with the state of the lab, it is now treated as production and
 If you have a service you trust your life with, do share with me. I'm always browsing the Self Hosted Subreddit looking for more to run.
 
 Adios!
-

@@ -3,9 +3,9 @@ lang: en
 title: Golang Interfaces are easy
 description: Once an interface and how it works clicks, your life will never be the same.... Maybe not but at least things will be easier to read.
 pubDate: 2024-12-18
-status: published
 tags:
   - coding
+status: published
 ---
 
 Recently been doing a lot of Golang for my twitch bot (I stream btw, rarely but I do). So while setting up the web-server I wanted to customize some of the functionality so each request checks the headers and respond differently based on said headers. So i went down the rabbit hole into Middleware and based on a book I'm reading called "Let's Go" by Alex Edwards you can pretty much "overload" the default methods as long as it satisfies the interface.

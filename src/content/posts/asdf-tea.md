@@ -3,9 +3,9 @@ lang: en
 title: Introducing asdf-tea
 description: How I found a whole in asdf that i decided to sort of patch
 pubDate: 2023-07-24
-status: published
 tags:
   - coding
+status: published
 ---
 
 I've been using asdf a lot lately to manage all of my languages versions and random packages that simply do not have an easy way to install

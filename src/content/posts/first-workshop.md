@@ -3,9 +3,9 @@ lang: en
 title: My First Workshop
 description: The first every workshop I did with some audience?
 pubDate: 2025-02-11
-status: published
 tags:
   - career
+status: published
 ---
 Part of my resolutions for this year is to do more public speaking so I've been looking for opportunities to do so at local meetups, company conferences or anything basically.
 

@@ -1,7 +1,7 @@
 ---
 lang: es
-title: "Hola — bienvenido al blog"
-description: "Una nota corta de bienvenida. Este blog ahora es bilingüe — escribo en español e inglés, sobre observabilidad, Kubernetes y lo que rompo en producción."
+title: Hola — bienvenido al blog
+description: Una nota corta de bienvenida. Este blog ahora es bilingüe — escribo en español e inglés, sobre observabilidad, Kubernetes y lo que rompo en producción.
 pubDate: 2026-05-10
 tags:
   - blog

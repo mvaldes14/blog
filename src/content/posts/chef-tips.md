@@ -3,9 +3,9 @@ lang: en
 title: Chef Tips and Tricks
 description: Things I wish I knew when I started using Chef.
 pubDate: 2022-12-10
-status: published
 tags:
   - automation
+status: published
 ---
 
 Lately I've been pretty deep into the Chef weeds and the more I end up working on it, the more I keep finding these little tips and tricks on how to get something done, some of these come from Seniors that passed them on to me and some of them I either end up finding online or figuring them out so would like to share them in case someone finds them useful.

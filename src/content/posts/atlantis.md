@@ -3,10 +3,10 @@ lang: en
 title: Terraform Automation with Atlantis
 description: IaC even at home, it may not be as fun but it sure teaches you a lot.
 pubDate: 2023-10-04
-status: published
 tags:
   - automation
   - iac
+status: published
 ---
 
 In big enterprises with decent IaC experience and infrastructure footprint you as a good engineer will use some sort of workflow to allow teams to deploy their infrastructure as code, so that things are controlled, centralized and manageable for whoever is paying the cloud bill.

@@ -3,9 +3,9 @@ lang: en
 title: Baby Tracker Vue App
 description: How often is your baby eating, pooping and peeing?. It's super important the very first month.
 pubDate: 2022-03-27
-status: published
 tags:
   - coding
+status: published
 ---
 
 My family recently expanded in numbers so with the arrival of my new baby girl ❤️, I had to remember how to wake up every couple hours, change diapers and keep track of her feeds, wet and dirty diapers up until she reaches 3 weeks or so. So when we were discharged from the hospital we were given a book with a log page so that we could track said events, but of course that book became useless when we had to wake up several times throughout the night and split the work between 2 tired and sleepy parents.

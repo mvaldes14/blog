@@ -3,10 +3,10 @@ lang: en
 title: Cloudflare Tunnels are the bomb
 description: Expose your services without VPNs or Port Forward. It's free and you get SSL, what-a-deal!.
 pubDate: 2023-02-25
-status: published
 tags:
   - homelab
   - k8s
+status: published
 ---
 
 As a self-hosted user, I understand the importance of keeping my applications and sites secure while still being able to access them from anywhere, because not everything can depend on me being on my home LAN.

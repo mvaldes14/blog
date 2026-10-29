@@ -43,7 +43,7 @@ export function t(_lang: Lang, key: keyof typeof ui.en): string {
 export function formatDate(date: Date, _lang: Lang): string {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'short',
+    month: '2-digit',
     day: '2-digit',
   });
 }

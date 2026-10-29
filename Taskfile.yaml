@@ -29,6 +29,17 @@ tasks:
     desc: "Sync blog content from Obsidian and ensure lang frontmatter is set"
     vars:
       VAULT_PATH:
-        sh: if uname -s | grep -i darwin > /dev/null; then echo "~/Obsidian/wiki/Blog/"; else echo "/mnt/c/Users/migue/Documents/wiki/03-Blog/"; fi
+        sh: |
+          for path in \
+            "${BLOG_VAULT_PATH:-}" \
+            "$HOME/Obsidian/wiki/Blog" \
+            "/mnt/c/Users/migue/Documents/wiki/03-Blog"; do
+            if [ -n "$path" ] && [ -d "$path" ]; then
+              printf '%s\n' "$path"
+              exit 0
+            fi
+          done
+          echo "Blog vault not found. Set BLOG_VAULT_PATH to its location." >&2
+          exit 1
     cmds:
-      - cmd: rsync -r {{.VAULT_PATH}} src/content/posts/
+      - cmd: rsync -r "{{.VAULT_PATH}}/" src/content/posts/
