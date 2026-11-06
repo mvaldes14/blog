@@ -18,17 +18,17 @@ Do have to point out this whole situation is most probably caused by something w
 > If you look at Linkedin or similar platform you will find dedicated positions just to maintain/upgrade and run Elastic. So if you like it and are good at it you may be able to find a good paying job!
 
 After some back to back issues and alerts I grew tired of it and started looking for a replacement that would have the following checklist:
-- [ ] Easy to install, a single binary if possible
-- [ ] Receives data from open source agents/clients. Beats are great but mostly locked for Elastic products which makes sense.
-- [ ] Easy to configure and manage, don't need to modify 2-3 different configuration files to get it to work
-- [ ] OTEL Compatible, I know Elastic recently adopted this but again hard to run
-- [ ] Has to be blanzingly fast, I'm an impatient person
-- [ ] Query language easy to use, Lucene is easy to learn but is limited compared to something like Splunk.
-- [ ] Easy way to setup data retention and rollout
+- [x] Easy to install, a single binary if possible
+- [x] Receives data from open source agents/clients. Beats are great but mostly locked for Elastic products which makes sense.
+- [x] Easy to configure and manage, don't need to modify 2-3 different configuration files to get it to work
+- [x] OTEL Compatible, I know Elastic recently adopted this but again hard to run
+- [x] Has to be blanzingly fast, I'm an impatient person
+- [x] Query language easy to use, Lucene is easy to learn but is limited compared to something like Splunk.
+- [x] Easy way to setup data retention and rollout
 
-After looking and testing some tools like Grafana [[Loki]] which covers most of the boxes, with some caveats which are mostly me being extra special and dense:
+After looking and testing some tools like Grafana Loki which covers most of the boxes, with some caveats which are mostly me being extra special and dense:
 - I'm not super fond of the PromQL language
-- Requires some config options for backend storage
+- Requires some config options for backend storage I wasn't gonna spend more than 5 minutes looking at.
 - Promtail only does logs and ideally I want one agent doing both metrics and logs down the road
 
 ## I ended up going with VictoriaLogs
