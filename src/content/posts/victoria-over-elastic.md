@@ -27,9 +27,9 @@ After some back to back issues and alerts I grew tired of it and started looking
 - [x] Easy way to setup data retention and rollout
 
 After looking and testing some tools like Grafana Loki which covers most of the boxes, with some caveats which are mostly me being extra special and dense:
-- I'm not super fond of the PromQL language
+- I'm not super fond of the PromQL language.
 - Requires some config options for backend storage I wasn't gonna spend more than 5 minutes looking at.
-- Promtail only does logs and ideally I want one agent doing both metrics and logs down the road
+- Promtail only does logs and ideally I want one agent doing both metrics and logs down the road.
 
 ## I ended up going with VictoriaLogs
 

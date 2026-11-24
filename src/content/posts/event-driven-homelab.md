@@ -1,92 +1,103 @@
 ---
 lang: en
 title: My Homelab Runs on Events
-description: Why I put an event bus in front of my homelab, what cloud pattern it copies, and how it grows
-pubDate: 2026-11-02
-status: draft
+description: Why I put an event bus in front of my homelab, which cloud patterns it copies, and how it grows
+pubDate: 2026-11-24
+status: published
 tags:
   - homelab
-  - architecture
   - automation
+  - observability
 ---
+GitHub webhooks, OpenTelemetry signals, and other external events now enter my homelab through one Go service. It parses each request and writes records to Redpanda, where consumers process them independently. I built it because managing separate endpoints, tunnels, and n8n workflows was getting annoying.
 
-People manage their digital lives in all sorts of ways, but software systems often converge on the same pattern: an event bus. When several services and providers need to work together, the bus gives them one place to exchange events.
+Each destination used to have its own receiver, authentication, and retry behavior. When something failed, I often lost the payload along with any useful record of what happened.
 
-That convenience comes with a cost. It adds another system to run and can become a single point of failure. Still, it is a proven pattern, and it solved a mess I had created in my homelab.
+This is more infrastructure than the traffic needs. I run one eventbus replica and one Redpanda broker, so both are deliberate single points of failure. For now, that is an acceptable tradeoff for having one place where I can follow an event through the system.
 
-Before this, every webhook from GitHub, Google Calendar, Discord, and n8n pointed directly at a different service. The same was true for OpenTelemetry signals and other triggers. Each destination had its own URL, receiver, authentication, and retry behavior. Most of it lived in n8n, and the setup had become painful to maintain.
-
-> I wrote about some of those automations in [[n8n-is-awesome]].
+> I wrote about some of those automations in [n8n is awesome](https://blog.mvaldes.dev/en/posts/n8n-is-awesome/).
 
 ## The point-to-point mess
 
-Each external service needed its own public endpoint, tunnel route, or other path into or out of the lab. Every receiver implemented its own validation, authentication, and retries.
+Every external service needed a public endpoint, tunnel route, or some other path into the lab. Each receiver handled validation, authentication, and retries in its own way.
 
-Adding another consumer for an existing webhook meant changing the producer or chaining more n8n workflows and scripts. If something failed, nothing retained the payload. It was gone.
+Adding a second consumer meant changing the producer or chaining more n8n workflows and scripts together. Failed payloads were not retained, so replay was impossible.
 
 ## What I built
 
-![[homelab-event-driven]]
+<figure>
+  <img src="https://s3.mvaldes.dev/edh-0.png" alt="Event flow from GitHub, AWS EventBridge, and OTLP clients through Cloudflare Tunnel into the Go eventbus, Redpanda topics, and independent consumers" />
+  <figcaption>Producers enter through one tunnel and one ingest service, then fan out across Redpanda topics.</figcaption>
+</figure>
 
-The design is simple: one public endpoint with validation and persistence in front of every event I care about.
 
-The endpoint accepts a defined set of sources and event types. It runs behind a Cloudflare Tunnel, which provides some protection against DDoS attacks and malicious traffic. Requests are rejected by default unless they include the expected authentication or validation data.
+The public side is one hostname backed by one ingest service.
 
-After validation, events land in Redpanda topics. Different consumers can subscribe to those topics, so each part of ingestion stays separate and can scale independently.
+Cloudflare proxies the HTTP traffic, then `cloudflared` connects the edge directly to the Kubernetes Service without opening an inbound port. I can apply DDoS protection, WAF rules, and rate limits at the edge, while the Tunnel provides the private path to the origin.
 
-### The Go proxy
+Checks depend on the source. AWS requests use a shared API key. OTLP requests are decoded and filtered by an allowed `service.name`. GitHub deliveries need provider metadata before the service routes them.
 
-The receiving proxy does most of the work. It verifies signatures or tokens for each source, such as GitHub HMAC signatures and Google Calendar channel tokens. It then normalizes the request into a common envelope, publishes it to the bus, and returns a 2xx response quickly so the producer never waits for a consumer. Each event type has its own topic.
+Accepted events land in purpose-specific topics. Each consumer group reads at its own pace, so a slow consumer does not block producers or other consumers.
 
-```json
-{
-  "id": "01JBX7Q2M4ZK8V3N6R9T0WYH5C",
-  "source": "github",
-  "type": "push",
-  "time": "2026-11-02T21:00:00Z",
-  "detail": {}
-}
-```
+### The Go service
+
+The service validates and decodes each request, chooses a topic and partition key, adds Kafka headers, and publishes synchronously with `acks=all`. It returns success after Redpanda acknowledges the record. Downstream consumers work independently because they are not part of the request path.
+
+Topics are grouped by purpose: `github`, `aws`, `logs`, `traces`, `metrics`, plus a general `events` topic for random things (backup messages, etc.). Webhook records carry the event ID, source, receive time, routing rule, schema version, and trace context in Kafka headers. OTLP records stay in OTLP protobuf format so the Collector's Kafka receiver can decode them directly.
 
 ### Consumers
 
-Consumers subscribe according to the data they handle:
+- Separate OpenTelemetry Collector Kafka receivers and consumer groups handle logs, traces, and metrics.
+- The Go service filters GitHub deliveries before publishing selected pull request, issue, push, workflow, and secret-scanning events. A notification consumer in n8n reads those records from the `github` topic. I filter them on purpose because GitHub gets noisy quickly.
+- Events arriving through an AWS EventBridge API Destination land on the `aws` topic. Another n8n consumer reads them today, though it may become its own microservice later.
 
-- Logs, traces, and metrics go to an OpenTelemetry Collector using `kafkareceiver`.
-- GitHub pull requests, issues, commits, and CI/CD events go to an n8n consumer on the GitHub topic.
-- AWS SNS and SQS events go to a Go service.
-- Script events, including backup notifications, go to another Go service.
+## Telemetry
 
-## Results
+The receiver creates OpenTelemetry spans for requests arriving through the tunnel and for the Redpanda publish. It puts trace context in Kafka headers so an instrumented consumer can continue the trace.
 
-The pipeline is now centralized, but the part I like most is that I built it with observability in mind. Everything is instrumented with OpenTelemetry, so I can see what entered the system, where it came from, and how it behaved.
+The service also exposes Prometheus metrics for accepted, rejected, dropped, and published events, along with publish latency, payload size, and OTLP filtering.
 
-I used an MCP to build a SigNoz dashboard from that telemetry. It makes latency, authorization failures, and consumer lag easy to spot. GitHub currently produces the most traffic, so it has its own dashboard section.
+I used the SigNoz MCP to generate the dashboard from that telemetry. Who wants to build a dashboard manually in 2026, right?
 
-I am happy with how it turned out. The bus gives me one place to control incoming traffic while still letting each consumer scale separately.
+<figure>
+  <img src="https://s3.mvaldes.dev/edh-1.png" alt="SigNoz dashboard showing eventbus traffic and publish telemetry" />
+  <figcaption>Eventbus traffic and publish telemetry in SigNoz.</figcaption>
+</figure>
 
-## EventBridge, only smaller
+<figure>
+  <img src="https://s3.mvaldes.dev/edh-2.png" alt="SigNoz dashboard section showing GitHub event traffic" />
+  <figcaption>Per-source volume, with GitHub split out from the rest.</figcaption>
+</figure>
 
-This is not a new architecture. Cloud providers and many applications use the same pattern. My version borrows from those systems on a much smaller scale.
 
-I have been recreating pieces of cloud infrastructure at home for a while. This event bus is another part of that project. Previous posts covered my [GitOps workflow](https://blog.mvaldes.dev/en/posts/gitops-workflow-homelab/), [self-hosted GitHub alternative](https://blog.mvaldes.dev/en/posts/run-your-own-git/), and the other cloud-like services in [Self-hosted 2026](https://blog.mvaldes.dev/en/posts/selfhosted-2026/), including S3-compatible storage.
+The dashboard displays publish latency, rejected events, errors, throughput, and consumer lag. GitHub produces the most traffic, so it has its own section.
+
+Between the dashboard and retained records, I have one place to inspect incoming traffic without coupling the consumers together.
+
+## How this maps to AWS
+
+Cloudflare and the Go service cover public ingestion and source-specific checks. The source registry, filtering, and routing borrow from EventBridge rules and Pipes. Redpanda is closer to Amazon MSK or Kinesis because it stores partitioned, retained streams with ordering inside each partition. Its topics and consumer groups provide the fan-out and independent processing often built with SNS and SQS.
+
+AWS also sends events back into the lab. An EventBridge API Destination posts selected events to the public ingest service, which publishes them to the `aws` topic for local consumers.
+
+I have been recreating pieces of cloud infrastructure at home for a while. Previous posts covered my [GitOps workflow](https://blog.mvaldes.dev/en/posts/gitops-workflow-homelab/), [self-hosted GitHub alternative](https://blog.mvaldes.dev/en/posts/run-your-own-git/), and the other cloud-like services in [Self-hosted 2026](https://blog.mvaldes.dev/en/posts/selfhosted-2026/), including S3-compatible storage.
 
 ## Why it works for me
 
-Adding a producer means adding a validator to the proxy. Existing consumers do not need to change. Adding a consumer means subscribing it to an existing topic without changing producers.
+A new producer needs source-specific checks and routing, plus any new topic and edge policy. Existing consumers stay untouched. A new consumer joins a topic with its own consumer group and requires no producer changes.
 
-Retained events also allow a new consumer to replay old data instead of waiting for fresh events. The common envelope acts as the contract, so I can replace the broker, n8n, or another consumer without changing the rest of the pipeline.
+Redpanda retains events, so a new consumer can replay recent data instead of waiting for fresh traffic. Kafka headers give webhook consumers a stable metadata contract, while telemetry keeps the standard OTLP protobuf format. Redpanda's Kafka-compatible API also leaves room for another compatible broker, though its configuration and operational behavior would still require migration work.
 
 ## Tradeoffs
 
-Nothing is synchronous anymore, so I have to accept eventual consistency. Debugging across several hops requires tracing and correlation IDs, which I send through OpenTelemetry into SigNoz.
+Delivery is at least once. Senders may retry, so consumers need deduplication or idempotent processing. Retention is finite: the general topic keeps seven days, while source and telemetry topics keep one day. This works well in a homelab, though a heavier environment would need more brokers and possibly longer retention.
 
-Consumers must also be idempotent because duplicate delivery will happen. On top of that, the event bus is another service I need to run, monitor, and alert on.
+Durability is limited by the cluster itself. `acks=all` is the correct producer setting, but one Redpanda broker with replication factor one still means one copy on one machine. A broker or local-disk failure can lose retained events. Events from senders that do not retry can also disappear during an outage.
 
-## What I learned
+## Conclusion
 
-A homelab gives me room to try patterns I encounter at work without waiting for a business reason. This project let me spend time with Redpanda and native OpenTelemetry, two technologies I had wanted to explore. It also fits my day-to-day work: integrating systems and making sure I can observe them when something goes wrong.
+A homelab lets me try patterns I encounter at work or online without waiting for a business reason. Building this pipeline gave me practical time with Redpanda and native OpenTelemetry while solving the same integration and observability problems I deal with at work.
 
-So yes, I built an event bus to receive notifications from GitHub, Discord, and a handful of scripts. It may be excessive, but now I can see every step when one of those notifications fails.
+AI coding tools make experiments like this much faster to build. This one took hours instead of days or weeks, which probably deserves its own post. If the setup sounds useful, the diagram above is enough to copy the basic flow over a weekend.
 
 Adios!
